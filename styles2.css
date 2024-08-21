@@ -1,0 +1,241 @@
+/* CSS for styling the banner */
+.banner {
+    width: 100%;
+    height: auto;
+    display: block;
+}
+
+/* CSS for styling the menu */
+* {
+	box-sizing: border-box;
+}
+
+$primary: hsl(260, 100%, 80%);
+
+html,
+body {
+	height: 100vh;
+	width: 100vw;
+}
+
+body {
+	margin: 0;
+	display: grid;
+	place-items: center;
+	background-color: #FFF;
+	font-family: system-ui, sans-serif;
+}
+
+nav,
+.nav-item {
+	display: flex;
+}
+
+nav {
+	border-radius: 6px; /* Raio do contorno da Borda */
+	background-color: #004E4C;
+	/*background-image: linear-gradient( /* Gradiente do background do menu */
+		rgb(0, 100, 5) 0%,
+		rgb(0, 10, 5) 50%,
+		#046343 100%
+	);*/
+	cursor: pointer;
+	box-shadow: 1px 2px 4px rgb(20, 20, 20), 0 4px 12px rgb(10, 10, 10);
+}
+
+.nav-item {
+	flex-direction: row-reverse;
+	font-family: Trebuchet, sans-serif;
+	font-size: 0.8999rem;
+	line-height: 1rem;
+	align-items: center;
+	min-width: 150px;
+	justify-content: center;
+	transition: all 80ms ease;
+
+	&.active {
+		color: $primary;
+		text-shadow: 0 0 3px hsla(260, 100%, 70%, 0.7);
+	}
+
+	&:not(.active):hover {
+		color: rgba(255, 255, 255, 0.87);
+	}
+
+	&:hover > .icon .subicon {
+		height: 32px;
+		width: 32px;
+		border-radius: 32px;
+		top: -16px;
+		right: -16px;
+		border-color: white;
+	}
+
+	&:not(:first-of-type) {
+		border-left: 1px solid rgb(60, 60, 60);
+	}
+	&:not(:last-of-type) {
+		border-right: 0.1rem solid black;
+	}
+
+	a {
+		color: White;
+		text-decoration: none;
+		padding: 1ch;
+	}
+
+	.icon {
+		padding: 1ch;
+		position: relative;
+
+		.subicon {
+			text-shadow: none;
+			transition: all 40ms ease;
+			position: absolute;
+			top: -3px;
+			right: -3px;
+			background: red;
+			color: white;
+			box-shadow: 0 0 4px rgba(41, 41, 41, 0.405);
+			width: 18px;
+			height: 18px;
+			border-radius: 14px;
+			font-size: 0.7em;
+			font-weight: 700;
+			display: inline-grid;
+			place-items: center;
+			border: 2px solid mix(white, red);
+		}
+	}
+
+	.icon > svg {
+		max-width: 16px;
+	}
+}
+
+.text-content {
+    font-family: Trebuchet, sans-serif;
+    font-size: 18px;
+    color: #004E4C;
+    background-color: #F5F1EB;
+    padding: 50px;
+    border: 1px solid #666;
+    border-radius: 10px;
+    width: calc(100% - 200px); /* Adjusting width to account for menu */
+    margin-top: 50px;
+    margin: 30px;
+    text-align: center;
+	box-shadow: 5px 5px 15px rgba(0, 0, 0, 0.3); /* Adiciona a sombra */
+}
+
+.separador {
+padding: 20px; /* Add padding to the image */
+}
+
+table {
+            width: 100%;
+            border-collapse: collapse;
+            margin-top: 20px;
+		background-color: white;	
+        }
+        th, td {
+            border: 1px solid black;
+            padding: 8px;
+            text-align: center;
+        }
+        th {
+            background-color: #f2f2f2;
+        }
+   
+
+}
+
+  .hospital-input {
+            display: flex;
+            flex-direction: column;
+            margin-bottom: 10px;
+	    width: 300px;
+            height: 30px;
+        }
+        .hospital-input input {
+            margin-top: 10px;
+            padding: 10px;
+            width: 300px;
+   	    height: 30px;
+        }
+
+    #questionContainer {
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      margin-bottom: 20px;
+    }
+
+    #question {
+      margin-bottom: 20px;
+      font-size: 24px;
+      color: #004E4C;
+    }
+
+    #buttonsContainer {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 10px; /* Space between buttons */
+      justify-content: center;
+    }
+
+	#additionalText {
+      font-size: 18px;
+      color: #000000;
+      text-align: left;
+      margin-top: 10px;
+    }
+
+    button {
+      padding: 10px 20px;
+      font-size: 16px;
+      border: none;
+      border-radius: 5px;
+      background-color: #004E4C;
+      color: white;
+      cursor: pointer;
+      transition: background-color 0.3s;
+    }
+
+    button:hover {
+      background-color: #0056b3;
+    }
+
+    #backButton {
+      background-color: #004E4C;
+      margin-top: 20px;
+    }
+
+    #backButton:hover {
+      background-color: #0056b3;
+    }
+
+.highlight-red {
+    background-color: #ff9999; /* Vermelho claro */
+}
+
+        .collapsible-content {
+            display: none;
+            padding: 10px;
+            border: 1px solid #ccc;
+            margin-top: 5px;
+        }
+
+        .collapsible-button {
+            cursor: pointer;
+            background-color: #004E4C;
+            color: white;
+            padding: 10px;
+            border: none;
+            text-align: left;
+            width: 100%;
+        }
+
+        .collapsible-button:hover {
+            background-color: #0056b3;
+        }
