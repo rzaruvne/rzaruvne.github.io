@@ -1,91 +1,57 @@
-/* CSS for styling the banner */
-.banner {
-    width: 100%;
-    height: auto;
-    display: block;
-}
-
-$primary: hsl(260, 100%, 80%);
-
-html,
-body {
-    height: 100vh;
-    width: 100vw;
-}
-
-
-body {
+/* Reset some default styles */
+body, h1, p {
     margin: 0;
-    display: grid;
-    place-items: center;
-    background-color: #FFF;
-    font-family: system-ui, sans-serif;
-
+    padding: 0;
 }
 
-/* CSS for styling the images */
-.image-container {
-    margin-top: 20px;
-    text-align: center; /* Center the images horizontally */
+body {
+    font-family: Arial, sans-serif;
+    line-height: 1.6;
 }
 
-.image-container a {
-    display: inline-block;
-    margin-right: 10px; /* Add some space between images */
+header.banner {
+    width: 100%;
+    overflow: hidden; /* Ensure the image doesn't overflow the container */
 }
 
-.image-container a:last-child {
-    margin-right: 0; /* Remove margin from the last image */
+header.banner img {
+    width: 100%; /* Make sure the image fits the container */
+    height: auto; /* Maintain aspect ratio */
+    display: block; /* Remove any extra space below the image */
 }
 
-.text-content {
-    font-family: Trebuchet, sans-serif;
-    font-size: 18px;
-    color: #004E4C;
-    background-color: #F5F1EB;
-    padding: 50px;
-    border: 1px solid #666;
-    border-radius: 10px;
-    width: 50%;
-    margin: 20px auto;
+.pergunta {
+    padding: 20px;
     text-align: center;
-    box-shadow: 5px 5px 15px rgba(0, 0, 0, 0.3); /* Add shadow */
 }
 
-.separador {
-    padding: 20px; /* Add padding to the image */
-    margin: 0 auto; /* Center the image horizontally */
-    display: block; /* Ensure the image is treated as a block element */
+.image-container {
+    display: flex;
+    justify-content: center;
+    gap: 10px; /* Space between images */
+    padding: 20px;
+    flex-wrap: wrap;
 }
 
-/* Responsive design for mobile devices */
-@media only screen and (max-width: 600px) {
-    .text-content {
-        width: 90%; /* Adjust width to fit smaller screens */
-        padding: 20px; /* Reduce padding on smaller screens */
-        font-size: 16px; /* Slightly smaller font size for readability */
-    }
+.image-container img {
+    max-width: 100%;
+    height: auto;
+    width: 100px; /* Adjust width as needed */
+}
 
+/* Responsive design */
+@media (max-width: 600px) {
     .image-container {
-        text-align: left; /* Align images to the left on small screens */
-    }
-
-    .image-container a {
-        display: block; /* Stack images vertically on small screens */
-        margin-right: 0; /* Remove right margin when stacked */
-        margin-bottom: 10px; /* Add margin below each image */
-    }
-
-    .image-container a:last-child {
-        margin-bottom: 0; /* Remove bottom margin from the last image */
+        flex-direction: column; /* Stack images vertically */
+        align-items: center; /* Center images horizontally */
     }
 
     .image-container img {
-        width: 100%; /* Make images full width */
-        height: auto; /* Maintain aspect ratio */
+        width: 80%; /* Adjust width on mobile */
+        margin-bottom: 10px; /* Space between stacked images */
     }
 
-    .separador {
-        padding: 10px; /* Reduce padding on smaller screens */
+    .image-container img:last-child {
+        margin-bottom: 0; /* Remove margin from the last image */
     }
 }
