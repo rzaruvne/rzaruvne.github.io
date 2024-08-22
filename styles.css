@@ -68,6 +68,13 @@ body {
         display: block; /* Stack images vertically on small screens */
         margin-right: 0; /* Remove right margin when stacked */
         margin-bottom: 10px; /* Add margin below each image */
+        width: 100%; /* Make images full width on small screens */
+        max-width: 100%; /* Ensure images do not exceed container width */
+    }
+
+    .image-container a img {
+        width: 100%; /* Make images inside the links full width */
+        height: auto; /* Maintain aspect ratio */
     }
 
     .image-container a:last-child {
