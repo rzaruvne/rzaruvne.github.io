@@ -7,11 +7,11 @@
 
 $primary: hsl(260, 100%, 80%);
 
-html,
-body {
-    height: 100vh;
-    width: 100vw;
-}
+/*html,*/
+/*body {*/
+    /*height: 100vh;*/
+    /*width: 100vw;*/
+/*}*/
 
 html {
     zoom: 1; /* Ensure zoom is not set to anything other than 1 */
