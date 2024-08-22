@@ -2,24 +2,45 @@
 <html lang="en">
 <head>
     <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Banner and Images</title>
+	<meta content="initial-scale=1.0, width=device-width" name="viewport"/>
+	<meta name="robots" content="noindex">
+    <title>SimulaREDE</title>
     <link rel="stylesheet" href="styles.css">
 </head>
 <body>
-    <header class="banner">
-        <!-- Replace 'banner.jpg' with the path to your banner image -->
-        <img src="banner.jpg" alt="Banner Image">
-    </header>
-    <div class="pergunta">
-        <p>Here is some text inside the Pergunta div.</p>
-    </div>
+    <!-- Banner image -->
+    <img src="banner-simulerede.jpg" alt="Banner Image" class="banner">
+
+<!-- Separador -->
+    <img src="icone-separador.png" alt="separador" class="separador">
+
+<!-- Text -->
+    <div class="text-content">
+        <h1>Seja bem-vindo(a)!</h1>
+          </div>
+
+    <!-- Images -->
     <div class="image-container">
-        <!-- Replace 'image1.jpg', 'image2.jpg', etc., with your image paths -->
-        <img src="image1.jpg" alt="Image 1">
-        <img src="image2.jpg" alt="Image 2">
-        <img src="image3.jpg" alt="Image 3">
-        <img src="image4.jpg" alt="Image 4">
+        <a href="simularede.html"><img src="icone-simula-rede.jpg" alt="Image 4"></a>
+        <a href="limitrofes.html"><img src="icone-municipios-limitrofes.jpg" alt="Image 2"></a>
+        <a href="regiao.html"><img src="icone-regioes-saude.jpg" alt="Image 3"></a>
+        <a href="calculadora585.html"><img src="icone-calculadora.jpg" alt="Image 1"></a>
     </div>
+<!-- Separador -->
+    <img src="icone-separador.png" alt="separador" class="separador">
+
+<script>
+window.addEventListener('beforeunload', function() {
+    localStorage.setItem('scrollPosition', window.scrollY);
+});
+
+window.addEventListener('load', function() {
+    const scrollPosition = localStorage.getItem('scrollPosition');
+    if (scrollPosition) {
+        window.scrollTo(0, scrollPosition);
+        localStorage.removeItem('scrollPosition');
+    }
+});
+</script>
 </body>
 </html>
