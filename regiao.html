@@ -1,0 +1,78 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<meta name="robots" content="noindex">
+    <title>SimulaREDE</title>
+    <link rel="stylesheet" href="styles2.css">
+	<script src="regiao.js" defer></script>
+</head>
+<body>
+    <!-- Banner image -->
+    <img src="banner-simulerede.jpg" alt="Banner Image" class="banner">
+
+<!-- Separador -->
+    <img src="icone-separador.png" alt="separador" class="separador">
+
+<!-- Menu -->
+<nav class="menu" id="nav">
+
+	<span class="nav-item">
+		<a href="https://www.unimed.coop.br/site/web/assessoriaregulamentarpr-parana/home" target="_blank">Assessoria Regulamentar</a>
+	</span>
+
+	<span class="nav-item">
+		<a href="simularede.html">SimulaRede</a>
+	</span>
+
+	<span class="nav-item">
+		<a href="limitrofes.html">Municípios limítrofes</a>
+	</span>
+
+	<span class="nav-item">
+		<a href="regiao.html">Região de Saúde</a>
+	</span>
+
+	<span class="nav-item">
+		<a href="calculadora585.html">Calculadora RN 585</a>
+	</span>
+</nav>
+
+<!-- Separador -->
+    <img src="icone-separador.png" alt="separador" class="separador">
+
+<!-- Text -->
+    <div class="text-content">
+<h1>Região de saúde</h1>
+<h3>Selecione um município para visualizar todos municípios dentro da mesma região de saúde</h3>
+<div id="content">
+	<script>
+        document.addEventListener("DOMContentLoaded", function() {
+            loadScriptContent(document.getElementById('content'));
+        });
+    </script>
+</div>
+<div id="additionalText">
+<b>Fonte: </b><a href="https://www.ans.gov.br/images/stories/Legislacao/in/IN_16_-_ANEXO.pdf" target="_blank">Anexo da IN ANS 16</a>
+</div>
+ </div>
+
+
+<!-- Separador -->
+    <img src="icone-separador.png" alt="separador" class="separador">
+
+<script>
+    window.addEventListener('load', function() {
+        // Seleciona o elemento que você quer que a página role até ele
+        var element = document.querySelector('.text-content');
+        
+        // Verifica se o elemento existe na página
+        if (element) {
+            // Rola para o elemento
+            element.scrollIntoView({ behavior: 'smooth' });
+        }
+    });
+</script>
+</body>
+</html>
