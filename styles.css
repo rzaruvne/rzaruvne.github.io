@@ -63,7 +63,7 @@ body {
     .text-content {
         width: 90%; /* Adjust width to fit smaller screens */
         padding: 20px; /* Reduce padding on smaller screens */
-        font-size: 20px; /* Slightly smaller font size for readability */
+        font-size: 16px; /* Slightly smaller font size for readability */
     }
 
     .image-container {
