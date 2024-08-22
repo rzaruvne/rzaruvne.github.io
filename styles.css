@@ -63,9 +63,9 @@ body {
 /* Responsive design for mobile devices */
 @media only screen and (max-width: 600px) {
 .text-content {
-    padding: 20px;
-    font-size: 15px;
-}
+        font-size: 1em; /* Smaller font size on mobile */
+        padding: 10px; /* Adjust padding if needed */
+    }
    .image-container {
         flex-direction: column; /* Stack images vertically */
         align-items: center; /* Center images horizontally */
