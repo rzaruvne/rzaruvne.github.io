@@ -63,6 +63,7 @@ body {
 /* Responsive design for mobile devices */
 @media only screen and (max-width: 600px) {
 .text-content {
+    padding: 20px;
     font-size: 15px;
 }
    .image-container {
