@@ -61,7 +61,7 @@ body {
 /* Responsive design for mobile devices */
 @media only screen and (max-width: 600px) {
     .text-content {
-        width: 100%; /* Adjust width to fit smaller screens */
+        width: 90%; /* Adjust width to fit smaller screens */
         padding: 20px; /* Reduce padding on smaller screens */
         font-size: 20px; /* Slightly smaller font size for readability */
     }
