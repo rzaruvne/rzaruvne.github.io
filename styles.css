@@ -13,9 +13,6 @@ body {
     width: 100vw;
 }
 
-html {
-    zoom: 1; /* Ensure zoom is not set to anything other than 1 */
-}
 
 body {
     margin: 0;
