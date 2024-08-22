@@ -63,6 +63,12 @@ body {
 
 /* Responsive design for mobile devices */
 @media only screen and (max-width: 600px) {
+	.banner {
+        /* Ensure the banner scales properly on mobile screens */
+        height: auto; /* Allow height to adjust based on content */
+        max-width: 100%; /* Prevent banner from exceeding viewport width */
+        margin: 0; /* Remove any default margin */
+    }
     .text-content {
         width: 90%; /* Adjust width to fit smaller screens */
         padding: 20px; /* Reduce padding on smaller screens */
