@@ -35,7 +35,6 @@ body {
     margin: 20px auto;
     text-align: center;
     box-shadow: 5px 5px 15px rgba(0, 0, 0, 0.3); /* Add shadow */
-        white-space: nowrap; /* Prevent text from wrapping */
 }
 
 /* CSS for styling the images */
@@ -65,13 +64,13 @@ body {
 @media only screen and (max-width: 600px) {
 .text-content {
     font-family: Trebuchet, sans-serif;
-    font-size: 18px;
+    font-size: 17px;
     color: #004E4C;
     background-color: #F5F1EB;
-    padding: 60px;
+    padding: 45px;
     border: 1px solid #666;
     border-radius: 10px;
-    width: 50%;
+    width: 40%;
     margin: 20px auto;
     text-align: center;
     box-shadow: 5px 5px 15px rgba(0, 0, 0, 0.3); /* Add shadow */
