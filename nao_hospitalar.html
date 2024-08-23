@@ -6,7 +6,6 @@
 	<meta name="robots" content="noindex">
     <title>SimulaREDE</title>
     <link rel="stylesheet" href="styles2.css">
-	<script src="regiao.js" defer></script>
 </head>
 <body>
     <!-- Banner image -->
@@ -44,27 +43,28 @@
 
 <!-- Text -->
     <div class="text-content">
-<h1>Região de saúde</h1>
-<br>
-<h3>Selecione um município para visualizar todos municípios dentro da mesma região de saúde</h3>
-<div id="content">
-	<script>
-        document.addEventListener("DOMContentLoaded", function() {
-            loadScriptContent(document.getElementById('content'));
-        });
-    </script>
-</div>
-<div id="additionalText">
-<b>Fonte: </b><a href="https://www.ans.gov.br/images/stories/Legislacao/in/IN_16_-_ANEXO.pdf" target="_blank">Anexo da IN ANS 16</a>
-</div>
- </div>
+	<h1>SimulaRede <span style="font-size: 25px;"" >> Prestador não hospitalar</span></h1>
+	<br>
+<h3><span style="font-size: 24px;"" >Qual é tipo da movimentação?</span></h3>
+	<br>
+  	<div id="buttonsContainer">
+	<button onclick="location.href='nhi.html'">Inclusão</button>
+	<button onclick="location.href='nhe.html'">Exclusão</button>
+	<button onclick="location.href='nha.html'">Alteração</button>
+	<button onclick="location.href='nhv.html'">Vinculação</button>
+	</div>
+
+	<br></br>
+	<button onclick="location.href='tipo_estab.html'">Voltar</button>
+	<br></br>
+    </div>
 
 
 <!-- Separador -->
     <img src="icone-separador.png" alt="separador" class="separador">
 
 <script>
-    window.addEventListener('load', function() {
+window.addEventListener('load', function() {
         // Seleciona o elemento que você quer que a página role até ele
         var element = document.querySelector('.text-content');
         
