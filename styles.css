@@ -67,8 +67,8 @@ body {
     font-size: 15px;
     color: #004E4C;
     background-color: #F5F1EB;
-    padding-left: 10px; /* Adjust padding on smaller screens */
-    padding-right: 10px;
+    padding-left: 50px; /* Adjust padding on smaller screens */
+    padding-right: 50px;
     padding-top: 20px; /* Optionally keep the top and bottom padding */
     padding-bottom: 20px;
     border: 1px solid #666;
