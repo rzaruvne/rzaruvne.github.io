@@ -96,4 +96,8 @@ body {
     margin: 0 auto; /* Center the image horizontally */
     display: block; /* Ensure the image is treated as a block element */
     }
+
+    .separador img{
+    width: 80%;
+    }
 }
