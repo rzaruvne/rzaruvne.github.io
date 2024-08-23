@@ -99,13 +99,5 @@ body {
         margin-bottom: 0; /* Remove margin from the last image */
     }
 
-    .separador {
-    padding: 20px; /* Add padding to the image */
-    margin: 0 auto; /* Center the image horizontally */
-    display: block; /* Ensure the image is treated as a block element */
-    }
-
-    .separador img{
-    width: 80%;
-    }
+    
 }
