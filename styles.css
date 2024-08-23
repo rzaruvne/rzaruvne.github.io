@@ -56,11 +56,10 @@ body {
 
 
 .separador {
-	width: 100%;
+    width: 100%;
     overflow: hidden;
     padding: 20px; /* Add padding to the image */
     margin: 0 auto; /* Center the image horizontally */
-    display: block; /* Ensure the image is treated as a block element */
 }
 
 .separador img{
