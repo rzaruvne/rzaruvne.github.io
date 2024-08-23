@@ -1,8 +1,19 @@
+/* Reset some default styles */
+body, h1, p {
+    margin: 0;
+    padding: 0;
+}
+
 /* CSS for styling the banner */
 .banner {
     width: 100%;
-    height: auto;
-    display: block;
+    overflow: hidden; /* Ensure the image doesn't overflow the container */
+}
+
+.banner img {
+    width: 100%; /* Ensure the image scales to fit the container */
+    height: auto; /* Maintain the aspect ratio */
+    display: block; /* Remove any extra space below the image */
 }
 
 /* CSS for styling the menu */
@@ -10,20 +21,15 @@
 	box-sizing: border-box;
 }
 
-$primary: hsl(260, 100%, 80%);
 
-html,
-body {
-	height: 100vh;
-	width: 100vw;
-}
 
 body {
 	margin: 0;
 	display: grid;
 	place-items: center;
-	background-color: #FFF;
-	font-family: system-ui, sans-serif;
+    background-color: #FFF;
+    font-family: system-ui, sans-serif;
+    overflow-x: hidden; /* Prevent horizontal scroll */
 }
 
 nav,
