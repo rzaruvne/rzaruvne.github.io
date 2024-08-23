@@ -92,6 +92,8 @@ body {
     }
 
     .separador {
-        padding: 10px; /* Reduce padding on smaller screens */
+    padding: 20px; /* Add padding to the image */
+    margin: 0 auto; /* Center the image horizontally */
+    display: block; /* Ensure the image is treated as a block element */
     }
 }
