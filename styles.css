@@ -68,15 +68,15 @@ body {
     font-size: 17px;
     color: #004E4C;
     background-color: #F5F1EB;
-    padding-left: 20px; /* Adjust padding on smaller screens */
-    padding-right: 20px;
+    padding-left: 40px; /* Adjust padding on smaller screens */
+    padding-right: 40px;
     padding-top: 20px; /* Optionally keep the top and bottom padding */
     padding-bottom: 20px;
     border: 1px solid #666;
     border-radius: 10px;
     width: 60%;
     margin: 20px auto;
-    text-align: center;
+    text-align: left;
     box-shadow: 5px 5px 15px rgba(0, 0, 0, 0.3); /* Add shadow */
 }
    .image-container {
