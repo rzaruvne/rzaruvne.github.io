@@ -134,6 +134,10 @@ nav {
 	box-shadow: 5px 5px 15px rgba(0, 0, 0, 0.3); /* Adiciona a sombra */
 }
 
+h3 {
+    font-family: Trebuchet, sans-serif;
+  }
+
 .separador {
     padding: 20px; /* Add padding to the image */
     margin: 0 auto; /* Center the image horizontally */
@@ -275,5 +279,77 @@ table {
         padding-top: 10px; /* Optionally keep the top and bottom padding */
         padding-bottom: 10px;
         box-sizing: border-box; /* Include padding in the element's total width */
+    }
+}
+
+/* Media Queries for Mobile Optimization */
+@media (max-width: 768px) {
+    .nav-item {
+        font-size: 0.75rem; /* Smaller font size for mobile */
+        min-width: 100px; /* Adjusted width for mobile */
+    }
+
+    .text-content {
+        font-size: 16px; /* Smaller font size for mobile */
+        padding: 20px; /* Less padding on mobile */
+        width: calc(100% - 40px); /* Adjusting width for mobile */
+        margin: 20px;
+    }
+
+    .hospital-input,
+    .hospital-input input {
+        width: 100%; /* Full width input for mobile */
+        max-width: 100%;
+    }
+
+    #question {
+        font-size: 20px; /* Smaller font size for mobile */
+    }
+
+    button {
+        font-size: 14px; /* Smaller font size for mobile */
+        padding: 8px 16px; /* Adjusted padding for mobile */
+    }
+
+    #additionalText {
+        font-size: 16px; /* Smaller font size for mobile */
+    }
+
+    .banner img {
+        height: auto; /* Maintain aspect ratio on smaller screens */
+    }
+
+    table {
+        font-size: 14px; /* Smaller font size for tables on mobile */
+    }
+
+    th, td {
+        padding: 5px; /* Less padding for mobile */
+    }
+
+    .collapsible-button {
+        font-size: 14px; /* Adjust button text size for mobile */
+    }
+}
+
+@media (max-width: 480px) {
+    nav,
+    .nav-item {
+        flex-direction: column; /* Stack menu items vertically on small screens */
+    }
+
+    .nav-item {
+        font-size: 0.65rem; /* Even smaller font size for very small screens */
+        min-width: 80px; /* Further reduce width */
+    }
+
+    .text-content {
+        font-size: 14px; /* Smaller font size for very small screens */
+        padding: 15px; /* Further reduced padding */
+    }
+
+    button {
+        font-size: 12px; /* Smaller font size for very small screens */
+        padding: 6px 12px; /* Further adjusted padding */
     }
 }
