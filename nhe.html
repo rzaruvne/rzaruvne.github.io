@@ -153,7 +153,7 @@
  	// Display additional text if available
         additionalTextElement.innerHTML = '';
          if (questions[index].additionalText) {
-      additionalTextElement.innerHTML = questions[index].additionalText.map(line => `<p>${line}</p>`).join('');
+      additionalTextElement.innerHTML = questions[index].additionalText.map(line => `<p>${line}</p>`).join('<br>');
       additionalTextElement.style.display = 'block';
     } else {
       additionalTextElement.style.display = 'none';
