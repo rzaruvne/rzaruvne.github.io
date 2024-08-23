@@ -75,8 +75,8 @@ body {
     border: 1px solid #666;
     border-radius: 10px;
     width: 60%;
-    margin: 20px auto;
-    text-align: left;
+    margin: 20px 0;
+    text-align: center;
     box-shadow: 5px 5px 15px rgba(0, 0, 0, 0.3); /* Add shadow */
 }
    .image-container {
