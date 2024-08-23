@@ -64,7 +64,7 @@ body {
 @media only screen and (max-width: 600px) {
 .text-content {
     font-family: Trebuchet, sans-serif;
-    font-size: 15px;
+    font-size: 14px;
     color: #004E4C;
     background-color: #F5F1EB;
     padding-left: 50px; /* Adjust padding on smaller screens */
@@ -75,7 +75,7 @@ body {
     border-radius: 10px;
     width: 60%;
     margin: 20px auto;
-    text-align: center;
+    text-align: left;
     box-shadow: 5px 5px 15px rgba(0, 0, 0, 0.3); /* Add shadow */
 }
    .image-container {
