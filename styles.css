@@ -90,9 +90,13 @@ body {
         margin-bottom: 0; /* Remove margin from the last image */
     }
 
-    .separador {
+   .separador {
         max-width: 100%; /* Ensure the image does not exceed the screen width */
         height: auto; /* Maintain the aspect ratio */
-        padding: 10px; /* Keep the existing padding */
+        padding-left: 10px; /* Adjust padding on smaller screens */
+        padding-right: 10px;
+        padding-top: 10px; /* Optionally keep the top and bottom padding */
+        padding-bottom: 10px;
+        box-sizing: border-box; /* Include padding in the element's total width */
     }
 }
