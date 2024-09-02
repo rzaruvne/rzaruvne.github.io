@@ -39,20 +39,20 @@
     <!-- Text -->
     <div class="text-content">
         <h1>Calculadora RN 585</h1>
-	<br>
-	<h3>De acordo com a Resolução Normativa 585, para excluir um prestador hospitalar por interesse da operadora ou do próprio prestador, sem necessidade de apresentar substituto, é necessário que o prestador a ser excluído <u>não</u> faça parte do grupo responsável por até 80% das internações na sua região de saúde ou que tenha, individualmente, menos de 5% das internações, considerando os últimos 12 meses. Esta regra se aplica tanto para a exclusão total do prestador quanto para a exclusão de alguma de suas categorias de serviços.</h3>
-	<br>
-	    <button class="collapsible-button">Para fins de exclusão parcial de serviços, as categorias foram definidas pela Resolução Normativa 585. Clique aqui para exibir as categorias.</button>
-	<br>
-    <div class="collapsible-content">
-        <p>Internação Psiquiátrica, Internação Obstétrica, Internação Pediátrica, Internação Clínica, Internação Cirúrgica, Internação em UTI Neonatal, Internação em UTI Pediátrica, Internação em UTI Adulto, Atendimento de Urgência e Emergência Adulto e Atendimento de Urgência e Emergência Pediátrico.</p>
-    </div>
-	<br>
-	<br>
-	<h3>A calculadora abaixo permite simular se, conforme as regras da RN 585, o hospital pode ser excluído da rede da operadora.</h3>
-	<br>
+        <br>
+        <h3>De acordo com a Resolução Normativa 585, para excluir um prestador hospitalar por interesse da operadora ou do próprio prestador, sem necessidade de apresentar substituto, é necessário que o prestador a ser excluído <u>não</u> faça parte do grupo responsável por até 80% das internações na sua região de saúde ou que tenha, <u>individualmente</u>, menos de 5% das internações, considerando os últimos 12 meses. Esta regra se aplica tanto para a exclusão total do prestador quanto para a exclusão de alguma de suas categorias de serviços.</h3>
+        <br>
+        <button class="collapsible-button">Para fins de exclusão parcial de serviços, as categorias foram definidas pela Resolução Normativa 585. Clique aqui para exibir as categorias.</button>
+        <br>
+        <div class="collapsible-content">
+            <p>Internação Psiquiátrica, Internação Obstétrica, Internação Pediátrica, Internação Clínica, Internação Cirúrgica, Internação em UTI Neonatal, Internação em UTI Pediátrica, Internação em UTI Adulto, Atendimento de Urgência e Emergência Adulto e Atendimento de Urgência e Emergência Pediátrico.</p>
+        </div>
+        <br>
+        <br>
+        <h3>A calculadora abaixo permite simular se, de acordo com as regras da RN 585, o hospital pode ser excluído da rede da operadora. Esta simulação é destinada exclusivamente para fins informativos e não substitui o cálculo oficial realizado pela ANS.</h3>
+        <br>
         <form id="hospitalForm">
-            <label for="numHospitals">Quantidade de hospitais na região de saúde:</label>
+            <label for="numHospitals"><h3>Quantidade de hospitais na região de saúde:</h3></label>
             <input type="number" id="numHospitals" name="numHospitals" min="1" required>
             <br><br>
             <div id="hospitalInputs">
@@ -126,7 +126,6 @@
 
                 let cumulativePercentage = 0;
                 let previousCumulativePercentage = 0;
-                let maxHospitalizations = hospitals[0].hospitalizations; // Highest number of hospitalizations
 
                 hospitals.forEach((hospital, index) => {
                     const row = document.createElement('tr');
@@ -198,6 +197,7 @@
                     hospitalNameInput.id = `hospitalName${i}`;
                     hospitalNameInput.name = `hospitalName${i}`;
                     hospitalNameInput.placeholder = `Nome hospital ${i}`;
+                    hospitalNameInput.className = 'hospital-name-input';
                     hospitalContainer.appendChild(hospitalNameInput);
 
                     const hospitalizationsInput = document.createElement('input');
@@ -206,22 +206,23 @@
                     hospitalizationsInput.name = `hospitalizations${i}`;
                     hospitalizationsInput.min = 0;
                     hospitalizationsInput.placeholder = `Quantidade de internações`;
+                    hospitalizationsInput.className = 'hospitalizations-input';
                     hospitalContainer.appendChild(hospitalizationsInput);
 
                     hospitalInputsContainer.appendChild(hospitalContainer);
                 }
             });
 
-	document.querySelector('.collapsible-button').addEventListener('click', function() {
-            const content = document.querySelector('.collapsible-content');
-            if (content.style.display === 'block') {
-                content.style.display = 'none';
-                this.textContent = 'Clique aqui para exibir as categorias de serviço';
-            } else {
-                content.style.display = 'block';
-                this.textContent = 'Clique aqui para ocultar as categorias de serviço';
-            }
-        });
+            document.querySelector('.collapsible-button').addEventListener('click', function() {
+                const content = document.querySelector('.collapsible-content');
+                if (content.style.display === 'block') {
+                    content.style.display = 'none';
+                    this.textContent = 'Clique aqui para exibir as categorias de serviço';
+                } else {
+                    content.style.display = 'block';
+                    this.textContent = 'Clique aqui para ocultar as categorias de serviço';
+                }
+            });
         </script>
     </div>
 
