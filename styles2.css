@@ -252,12 +252,7 @@ table {
             background-color: #0056b3;
         }
 
-        #hospitalInputs .hospital-name-input {
-            width: 25%; /* Larger width */
-        }
-        #hospitalInputs .hospitalizations-input {
-            width: 15%; /* Smaller width */
-        }
+
 
 /* Responsive design for mobile devices */
 @media only screen and (max-width: 600px) {
