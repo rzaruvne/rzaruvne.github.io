@@ -252,7 +252,21 @@ table {
             background-color: #0056b3;
         }
 
+.main-footer {
+    background-color:#FFFFFF; /* Light grey background */
+    color: #000000; /* Text color */
+    padding: 10px;	
+    font-size: 14px; /* Font size */
+    display: flex;
+    justify-content: space-between; /* Space between items */
+    align-items: center; /* Center items vertically */
+    width: 100%; /* Ensure the footer takes up the full width */
+    box-sizing: border-box; /* Include padding in the width */
+}
 
+.main-footer .pull-right {
+    margin-left: auto; /* Pushes the element to the right */
+}
 
 /* Responsive design for mobile devices */
 @media only screen and (max-width: 600px) {
