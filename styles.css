@@ -60,6 +60,18 @@ body {
     display: block; /* Ensure the image is treated as a block element */
 }
 
+.main-footer {
+    background-color: #f8f9fa; /* Light grey background */
+    color: #6c757d; /* Text color */
+	padding: 10px;	
+    font-size: 14px; /* Font size */
+}
+
+.main-footer .pull-right {
+    float: right; /* Aligns the content to the right */
+}
+
+
 /* Responsive design for mobile devices */
 @media only screen and (max-width: 600px) {
 .text-content {
