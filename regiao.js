@@ -430,7 +430,7 @@ function loadScriptContent(container) {
       regiaoContainer.innerHTML = '';
     } else {
       const selectedCity = cities[selectedIndex];
-      regiaoContainer.innerHTML = `<h3>Municípios na mesma região de saúde de ${selectedCity.name}: ${selectedCity.regiao.join(', ')}</h3>`;
+      regiaoContainer.innerHTML = `<br><p>Municípios na mesma região de saúde de ${selectedCity.name}: ${selectedCity.regiao.join(', ')}<\p>`;
     }
   });
 

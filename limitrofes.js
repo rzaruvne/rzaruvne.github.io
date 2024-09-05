@@ -429,7 +429,7 @@ function loadScriptContent(container) {
       borderingCitiesContainer.innerHTML = '';
     } else {
       const selectedCity = cities[selectedIndex];
-      borderingCitiesContainer.innerHTML = `<h3>Municípios limítrofes de ${selectedCity.name}: ${selectedCity.borderingCities.join(',  ')}</h3>`;
+      borderingCitiesContainer.innerHTML = `<br><p>Municípios limítrofes de ${selectedCity.name}: ${selectedCity.borderingCities.join(',  ')}</p>`;
     }
   });
 
