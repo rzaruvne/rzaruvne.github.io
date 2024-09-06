@@ -301,7 +301,7 @@ table {
 /* Media Queries for Mobile Optimization */
 @media (max-width: 768px) {
     .nav-item {
-        font-size: 0.75rem; /* Smaller font size for mobile */
+        font-size: 0.90rem; /* Smaller font size for mobile */
         min-width: 100px; /* Adjusted width for mobile */
     }
 
@@ -355,7 +355,7 @@ table {
     }
 
     .nav-item {
-        font-size: 0.65rem; /* Even smaller font size for very small screens */
+        font-size: 0.75rem; /* Even smaller font size for very small screens */
         min-width: 80px; /* Further reduce width */
     }
 
