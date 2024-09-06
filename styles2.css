@@ -272,7 +272,7 @@ table {
 @media only screen and (max-width: 600px) {
 .text-content {
     font-family: Trebuchet, sans-serif;
-    font-size: 14px;
+    font-size: 18px;
     color: #004E4C;
     background-color: #F5F1EB;
     padding-left: 0px; /* Adjust padding on smaller screens */
