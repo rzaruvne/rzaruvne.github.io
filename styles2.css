@@ -306,7 +306,7 @@ table {
     }
 
     .text-content {
-        font-size: 16px; /* Smaller font size for mobile */
+        font-size: 18px; /* Smaller font size for mobile */
         padding: 20px; /* Less padding on mobile */
         width: calc(100% - 40px); /* Adjusting width for mobile */
         margin: 20px;
@@ -360,7 +360,7 @@ table {
     }
 
     .text-content {
-        font-size: 14px; /* Smaller font size for very small screens */
+        font-size: 18px; /* Smaller font size for very small screens */
         padding: 15px; /* Further reduced padding */
     }
 
