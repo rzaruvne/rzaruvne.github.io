@@ -101,7 +101,7 @@
 	const codeElement = document.getElementById('codeShow');
 
         questionElement.innerHTML = questions[index].text;
-	codeElement.innerHTML = `Código: ${questions[index].code}`;
+	//codeElement.innerHTML = `Código: ${questions[index].code}`;
 
         // Clear previous buttons
         buttonsContainer.innerHTML = '';
@@ -220,11 +220,10 @@
 
 <!-- Text -->
     <div class="text-content">
-	<h1>SimulaRede <span style="font-size: 25px;"" >> Prestador não hospitalar > Alteração</h1>
+	<h2>SimulaRede <span style="font-size: 25px;"" >> Prestador não hospitalar > Alteração</h2>
 	<br>
 	<br>
 	<p id="question">Question 1</p>
-	<div id="codeShow"></div>
 	<br> 
   	<div id="buttonsContainer"></div>
 	<br> 
