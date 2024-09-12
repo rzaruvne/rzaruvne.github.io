@@ -1,6 +1,8 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
+	<!-- Google tag (gtag.js) --> 
+	<script async src="https://www.googletagmanager.com/gtag/js?id=G-LLSDBSPBJH"></script> <script> window.dataLayer = window.dataLayer || []; function gtag(){dataLayer.push(arguments);} gtag('js', new Date()); gtag('config', 'G-LLSDBSPBJH'); </script> 
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta name="robots" content="noindex">
@@ -17,7 +19,7 @@
     <!-- Menu -->
     <nav class="menu" id="nav">
         <span class="nav-item">
-            <a href="https://www.unimed.coop.br/site/web/assessoriaregulamentarpr-parana/home" target=”_blank”>Assessoria Regulamentar</a>
+            <a href="https://www.unimed.coop.br/site/web/assessoriaregulamentarpr-parana/home" target="_blank">Assessoria Regulamentar</a>
         </span>
         <span class="nav-item">
             <a href="simularede.html">SimulaRede</a>
@@ -40,28 +42,29 @@
     <div class="text-content">
 	<p style="font-size: 40px;"><b>Calculadora RN 585</b></p>
         <br><br>
-        <p>De acordo com a Resolução Normativa 585, para excluir um prestador hospitalar por interesse da operadora ou do próprio prestador, sem necessidade de apresentar substituto, é necessário que o prestador a ser excluído <b>não</b> faça parte do grupo responsável por até 80% das internações na sua região de saúde ou que tenha, <b>individualmente</b>, menos de 5% das internações, considerando os últimos 12 meses. Esta regra se aplica tanto para a exclusão total do prestador quanto para a exclusão de alguma de suas categorias de serviços.</p>
+        <p>De acordo com a Resolução Normativa 585, para realizar o redimensionamento por redução de um prestador hospitalar por interesse da operadora ou do próprio prestador, sem necessidade de apresentar substituto, é necessário que o prestador a ser redimensionado <b>não</b> faça parte do grupo responsável por até 80% das internações na sua região de saúde ou que tenha, <b>individualmente</b>, menos de 5% das internações, considerando os últimos 12 meses, para o(s) plano(s) objeto(s) do redimensionamento. Esta regra também se aplica para a exclusão parcial de serviços.</p>
         <br>
-        <button class="collapsible-button">Para fins de exclusão parcial de serviços, as categorias foram definidas pela Resolução Normativa 585. Clique aqui para exibir as categorias.</button>
+        <button class="collapsible-button">Para fins de exclusão parcial de serviços, as categorias foram definidas pela Resolução Normativa 585. Clique aqui para consultar.</button>
         <br>
         <div class="collapsible-content">
             <p>Internação Psiquiátrica, Internação Obstétrica, Internação Pediátrica, Internação Clínica, Internação Cirúrgica, Internação em UTI Neonatal, Internação em UTI Pediátrica, Internação em UTI Adulto, Atendimento de Urgência e Emergência Adulto e Atendimento de Urgência e Emergência Pediátrico.</p>
         </div>
         <br>
         <br>
-        <p>A calculadora abaixo permite simular se, de acordo com as regras da RN 585, o hospital pode ser excluído da rede da operadora. Esta simulação é destinada exclusivamente para entendimento da regra e não substitui o cálculo oficial realizado pela ANS.</p>
-        <br>
+        <p>A calculadora abaixo permite simular se, de acordo com as regras da RN 585, o hospital poderá ser redimensionado por redução. Esta simulação é destinada exclusivamente para entendimento da regra e não substitui o cálculo oficial realizado pela ANS.</p>
+        <br><br>
         <form id="hospitalForm">
-            <label for="numHospitals"><p>Quantidade de hospitais na região de saúde:</p><br></label>
-            <input type="number" id="numHospitals" name="numHospitals" min="1" required>
+            <label for="numHospitals"><p>Digite a quantidade de hospitais na região de saúde:</p><br></label>
+            <input type="number" id="numHospitals" name="numHospitals" min="1">
             <br><br>
             <div id="hospitalInputs">
                 <!-- Hospital name and hospitalization inputs will be added here -->
             </div>
             <br>
-            <input type="submit" value="Calcular">
+            <input type="submit" value="Calcular" onclick="calculateAndDisplayMessage()">
             <br><br>
             <div id="errorMessage" style="color: red; display: none;">Por favor, preencha todos os campos "Quantidade de internações".</div>
+	    
         </form>
 
         <div id="hospitalTableContainer" style="display: none;">
@@ -73,7 +76,7 @@
                         <th>Quantidade de internações</th>
                         <th>Contribuição individual</th>
                         <th>Percentual cumulativo</th>
-                        <th>Poderá ser excluído?</th>
+                        <th>Poderá ser redimensionado?</th>
                         <th>Motivo</th>
                     </tr>
                 </thead>
@@ -85,6 +88,12 @@
         </div>
 
         <script>
+
+		function displayMessage() {
+    var messageElement = document.getElementById("message");
+    messageElement.style.display = "block";
+}
+
             document.getElementById('hospitalForm').addEventListener('submit', function(event) {
                 event.preventDefault(); // Prevent the default form submission
 
