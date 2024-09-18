@@ -124,7 +124,7 @@ function loadScriptContent(container) {
 { name:"Foz do Jordão", borderingCities: ["Candói","Chopinzinho","Mangueirinha","Pinhão","Reserva do Iguaçu"] },
 { name:"Francisco Alves", borderingCities: ["Iporã","Palotina","Terra Roxa"] },
 { name:"Francisco Beltrão", borderingCities: ["Ampére","Bom Sucesso do Sul","Enéas Marques","Flor da Serra do Sul","Itapejara d'Oeste","Manfrinópolis","Marmeleiro","Nova Esperança do Sudoeste","Renascença","Verê"] },
-{ name:"General Carneiro", borderingCities: [")Matos Costa(SC)","Água Doce (SC)","Bituruna","Caçador (SC","Calmon(SC)","Palmas","Porto União(SC)","Porto Vitória"] },
+{ name:"General Carneiro", borderingCities: ["Água Doce (SC)","Bituruna","Caçador (SC)","Calmon(SC)","Matos Costa(SC)","Palmas","Porto União(SC)","Porto Vitória"] },
 { name:"Godoy Moreira", borderingCities: ["Barbosa Ferraz","Iretama","Jardim Alegre","Lunardelli","São João do Ivaí"] },
 { name:"Goioerê", borderingCities: ["Formosa do Oeste","Janiópolis","Mariluz","Moreira Sales","Quarto Centenário","Rancho Alegre d'Oeste"] },
 { name:"Goioxim", borderingCities: ["Campina do Simão","Cantagalo","Guarapuava","Marquinho","Palmital","Santa Maria do Oeste"] },
