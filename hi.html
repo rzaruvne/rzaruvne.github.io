@@ -1,0 +1,201 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<!-- Google tag (gtag.js) --> 
+	<script async src="https://www.googletagmanager.com/gtag/js?id=G-LLSDBSPBJH"></script> <script> window.dataLayer = window.dataLayer || []; function gtag(){dataLayer.push(arguments);} gtag('js', new Date()); gtag('config', 'G-LLSDBSPBJH'); </script>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<meta name="robots" content="noindex">
+    <title>SimulaREDE</title>
+    <link rel="stylesheet" href="styles2.css">
+<script>
+    document.addEventListener("DOMContentLoaded", function() {
+      // Define the questions and answer mappings
+      const questions = [
+
+{code:"1.",text:"O prestador é de rede direta ou indireta?",answers:{"Direta":"3.","Indireta":"2."},additionalText:["<b>Informações complementares:</b>","Rede Direta - é a rede de prestadores próprios ou contratados pela operadora.","Rede Indireta - é composta pela rede de prestadores das demais Unimeds do sistema nacional e divulgada através do RNP, disponibilizado pela Unimed do Brasil."]},
+{code:"2.",text:"A Singular é aderente ao serviço CEMPRE de rede indireta?",answers:{"Sim":"R.2_1.","Não":"R.2_2.",},additionalText:["<b>Informações complementares:</b>","CEMPRE - Central Estadual de Manutenção de Rede de Prestadores. Serviço prestado às Singulares do Estado do Paraná pela Assessoria Regulamentar da Federação. Clique <a href=' https://www.unimed.coop.br/site/web/assessoriaregulamentarpr-parana/cempre' target='_blank' >aqui</a> para acessar a página do serviço."]},
+{code:"R.2_1.",text:"A CEMPRE realizará a movimentação dos prestadores de rede indireta, conforme relatório de prestadores da rede nacional disponibilizado pela Unimed do Brasil.",answers:{}},
+{code:"R.2_2.",text:"A Singular deverá solicitar a inclusão do prestador por meio do envio de arquivo XML de inclusão (extensão RPI) para ANS. <br>Para mais informações, entre em contato com a Assessoria Regulamentar: <a href='mailto:cempre@unimedpr.coop.br'>cempre@unimedpr.coop.br</a>.",answers:{}},
+{code:"3.",text:"O hospital possui CNES?",answers:{"Sim":"3.1.","Não":"3.2."},additionalText:["<b>Informações complementares:</b>","Clique <a href=' http://cnes.datasus.gov.br/' target='_blank' >aqui</a> para consultar o site do CNES."]},
+{code:"3.1.",text:"A Singular é aderente ao serviço CEMPRE de rede direta?",answers:{"Sim":"R.3.1_1.","Não":"R.3.1_2."},additionalText:["<b>Informações complementares:</b>","CEMPRE - Central Estadual de Manutenção de Rede de Prestadores. Serviço prestado às Singulares do Estado do Paraná pela Assessoria Regulamentar da Federação. Clique <a href=' https://www.unimed.coop.br/site/web/assessoriaregulamentarpr-parana/cempre' target='_blank' >aqui</a> para acessar a página do serviço."]},
+{code:"R.3.1_1.",text:"A Singular deverá solicitar a inclusão do prestador via SIR RPS, clique no botão abaixo para acesso rápido à plataforma.",answers:{"SIR RPS":{ "url": "https://sir.adm.br/cempre/"}},additionalText:["<b>Informações complementares:</b>","Caso precise de auxílio para o preenchimento do formulário eletrônico no SIR-RPS, leia o passo a passo no <a href='manual_sir.pdf' target='_blank' >Manual do Usuário. </a>"]},
+{code:"R.3.1_2.",text:"A Singular deverá solicitar inclusão do prestador por meio do envio de arquivo XML de inclusão (extensão RPI) para ANS. <br>Para mais informações entre em contato com a Assessoria Regulamentar: <a href='mailto:cempre@unimedpr.coop.br'>cempre@unimedpr.coop.br</a>.",answers:{}},
+{code:"3.2.",text:"A Singular é aderente ao serviço CEMPRE de rede direta?",answers:{"Sim":"R.3.2_1.","Não":"R.3.2_2."},additionalText:["<b>Informações complementares:</b>","CEMPRE - Central Estadual de Manutenção de Rede de Prestadores. Serviço prestado às Singulares do Estado do Paraná pela Assessoria Regulamentar da Federação. Clique <a href=' https://www.unimed.coop.br/site/web/assessoriaregulamentarpr-parana/cempre' target='_blank' >aqui</a> para acessar a página do serviço."]},
+{code:"R.3.2_1.",text:"A Singular deverá solicitar a inclusão do prestador via SIR RPS, clique no botão abaixo para acesso rápido à plataforma.",answers:{"SIR RPS":{ "url": "https://sir.adm.br/cempre/"}},additionalText:["<b>Informações complementares:</b>","Caso precise de auxílio para o preenchimento do formulário eletrônico no SIR-RPS, leia o passo a passo no <a href='manual_sir.pdf' target='_blank' >Manual do Usuário. </a>","O prestador deverá providenciar o CNES, pois, conforme portaria N° 1.646/2015 do Ministério da Saúde, o cadastramento e a manutenção dos dados cadastrais no CNES são obrigatórios para que todo e qualquer estabelecimento de saúde (clique <a href='https://www.gov.br/ans/pt-br/centrais-de-conteudo/portaria-n-1646-de-02-de-outubro-de-2015-cnes-pdf/view' target='_blank' >aqui</a> para acessar a portaria). Após o prestador ter o seu registro CNES finalizado, deverá ser feito alteração do campo na ANS."]},
+{code:"R.3.2_2.",text:"A Singular deverá solicitar inclusão do prestador por meio do envio de arquivo XML (extensão RPI) para ANS. <br>Para mais informações entre em contato com a Assessoria Regulamentar: <a href='mailto:cempre@unimedpr.coop.br'>cempre@unimedpr.coop.br</a>.",answers:{},additionalText:["<b>Informações complementares:</b>"," O prestador deverá providenciar o CNES, pois, conforme portaria N° 1.646/2015 do Ministério da Saúde, o cadastramento e a manutenção dos dados cadastrais no CNES são obrigatórios para que todo e qualquer estabelecimento de saúde (clique <a href='https://www.gov.br/ans/pt-br/centrais-de-conteudo/portaria-n-1646-de-02-de-outubro-de-2015-cnes-pdf/view' target='_blank' >aqui</a> para acessar a portaria). Após o prestador ter o seu registro CNES finalizado, deverá ser feito alteração do campo na ANS."]},
+
+
+
+
+
+
+      ];
+
+      let currentQuestionIndex = 0;
+      const questionHistory = [];
+
+      function loadQuestion(index) {
+        const questionElement = document.getElementById('question');
+        const buttonsContainer = document.getElementById('buttonsContainer');
+	const additionalTextElement = document.getElementById('additionalText');
+	const scriptContainer = document.getElementById('scriptContainer');
+	const codeElement = document.getElementById('codeShow');
+
+        questionElement.innerHTML = questions[index].text;
+	//codeElement.innerHTML = `Código: ${questions[index].code}`;
+
+        // Clear previous buttons
+        buttonsContainer.innerHTML = '';
+        additionalTextElement.innerHTML = '';
+        scriptContainer.innerHTML = '';
+
+        // Create new buttons based on answers
+        const answers = questions[index].answers;
+        for (const answer in answers) {
+          const button = document.createElement('button');
+          button.textContent = answer;
+          button.addEventListener('click', function() {
+            if (typeof answers[answer] === 'object' && answers[answer].url) {
+              window.open(answers[answer].url);
+            } else {
+              handleAnswer(answer, answers[answer]);
+            }
+          });
+          buttonsContainer.appendChild(button);
+        }
+
+ 	// Display additional text if available
+         additionalTextElement.innerHTML = '';
+          if (questions[index].additionalText) {
+      additionalTextElement.innerHTML = questions[index].additionalText.map(line => `<p>${line}</p>`).join('<br>');
+      additionalTextElement.style.display = 'block';
+    } else {
+      additionalTextElement.style.display = 'none';
+    }
+
+	// Load and execute script if available
+        if (questions[index].script) {
+          const script = document.createElement('script');
+          script.src = questions[index].script;
+          script.onload = function() {
+            if (typeof loadScriptContent === 'function') {
+              loadScriptContent(scriptContainer);
+            }
+          };
+          document.body.appendChild(script);
+        }
+
+
+
+      }
+
+	
+     function handleAnswer(answer, nextQuestionCode) {
+        questionHistory.push(currentQuestionIndex);
+        // Find the next question index based on the code
+        const nextIndex = questions.findIndex(question => question.code === nextQuestionCode);
+        if (nextIndex !== -1) {
+          currentQuestionIndex = nextIndex;
+          loadQuestion(currentQuestionIndex);
+        } else {
+          // Handle if next question not found (e.g., show end of questionnaire message)
+          console.log("End of questionnaire or next question not found.");
+        }
+      }
+
+      function handleBack() {
+        if (questionHistory.length > 0) {
+          currentQuestionIndex = questionHistory.pop();
+          loadQuestion(currentQuestionIndex);
+        }
+      }
+
+      document.getElementById('backButton').addEventListener('click', function() {
+    if (questions[currentQuestionIndex].code === "1.") {
+        // Redirect to a different page
+        window.location.href = 'hospitalar.html';
+    } else if (questionHistory.length > 0) {
+        currentQuestionIndex = questionHistory.pop();
+        loadQuestion(currentQuestionIndex);
+    }
+});
+
+      // Load the initial question
+      loadQuestion(currentQuestionIndex);
+    });
+	</script>
+</head>
+<body>
+    <!-- Banner image -->
+    <img src="banner-simulerede.jpg" alt="Banner Image" class="banner">
+
+<!-- Separador -->
+    <img src="icone-separador.png" alt="separador" class="separador">
+
+<!-- Menu -->
+<nav class="menu" id="nav">
+
+	<span class="nav-item">
+		<a href="https://www.unimed.coop.br/site/web/assessoriaregulamentarpr-parana/home" target="_blank">Assessoria Regulamentar</a>
+	</span>
+
+	<span class="nav-item">
+		<a href="simularede.html">SimulaRede</a>
+	</span>
+
+	<span class="nav-item">
+		<a href="limitrofes.html">Municípios limítrofes</a>
+	</span>
+
+	<span class="nav-item">
+		<a href="regiao.html">Região de Saúde</a>
+	</span>
+
+	<span class="nav-item">
+		<a href="calculadora585.html">Calculadora RN 585</a>
+	</span>
+</nav>
+
+<!-- Separador -->
+    <img src="icone-separador.png" alt="separador" class="separador">
+
+<!-- Text -->
+    <div class="text-content">
+	<p style="font-size: 35px; font-weight: bold;">SimulaRede <span style="font-size: 25px; font-weight: bold;">&gt; Prestador hospitalar &gt; Inclusão</span></p>
+	<br>
+	<br>
+	<p id="question">Question 1</p>
+	<br> 
+  	<div id="buttonsContainer"></div>
+	<br> 
+	<button id="backButton">Voltar</button>
+	<br></br>
+	<div id="additionalText" style="display: none;"></div>
+	<div id="scriptContainer"></div>
+  	<br></br>
+    </div>
+
+
+<!-- Separador -->
+    <img src="icone-separador.png" alt="separador" class="separador">
+<br>
+<footer class="main-footer">
+      <div class="pull-right hidden-xs">
+      <b>Versão</b> 1.0.0
+    </div>
+</footer>
+<script>
+window.addEventListener('load', function() {
+        // Seleciona o elemento que você quer que a página role até ele
+        var element = document.querySelector('.text-content');
+        
+        // Verifica se o elemento existe na página
+        if (element) {
+            // Rola para o elemento
+            element.scrollIntoView({ behavior: 'smooth' });
+        }
+    });
+</script>
+</body>
+</html>

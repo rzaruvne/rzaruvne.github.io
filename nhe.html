@@ -1,0 +1,333 @@
+	<!DOCTYPE html>
+<html lang="en">
+<head>
+	<!-- Google tag (gtag.js) --> 
+	<script async src="https://www.googletagmanager.com/gtag/js?id=G-LLSDBSPBJH"></script> <script> window.dataLayer = window.dataLayer || []; function gtag(){dataLayer.push(arguments);} gtag('js', new Date()); gtag('config', 'G-LLSDBSPBJH'); </script>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<meta name="robots" content="noindex">
+    <title>SimulaREDE</title>
+    <link rel="stylesheet" href="styles2.css">
+<script>
+    document.addEventListener("DOMContentLoaded", function() {
+      // Define the questions and answer mappings
+      const questions = [
+{code:"1.",text:"O prestador é de rede direta ou indireta?",answers:{"Rede direta":"2.","Rede indireta":"1.1."},additionalText:["<b>Informações complementares:</b>","Rede Direta - é a rede de prestadores próprios ou contratados pela operadora.","Rede Indireta - é composta pela rede de prestadores das demais Unimeds do sistema nacional e divulgada através do RNP, disponibilizado pela Unimed do Brasil."]},
+{code:"1.1.",text:"A Singular é aderente ao serviço CEMPRE de rede indireta?",answers:{"Sim":"R.1.1_1.","Não":"R.1.1_2."},additionalText:["<b>Informações complementares:</b>","CEMPRE - Central Estadual de Manutenção de Rede de Prestadores. Serviço prestado às Singulares do Estado do Paraná pela Assessoria Regulamentar da Federação. Clique <a href=' https://www.unimed.coop.br/site/web/assessoriaregulamentarpr-parana/cempre' target='_blank' >aqui</a> para acessar a página do serviço."]},
+{code:"R.1.1_1.",text:"A CEMPRE realizará a movimentação dos prestadores de rede indireta, conforme relatório de prestadores da rede nacional disponibilizado pela Unimed do Brasil.",answers:{}},
+{code:"R.1.1_2.",text:"A Singular deverá solicitar a exclusão do prestador por meio do envio de arquivo XML de vinculação (extensão RPV) para ANS, observando as regras da RN 567. <br>Para mais informações, entre em contato com a Assessoria Regulamentar: <a href='mailto:cempre@unimedpr.coop.br'>cempre@unimedpr.coop.br</a>.",answers:{}},
+{code:"2.",text:"Qual é a relação com o prestador?",answers:{"Próprio":"3.","Contratualizado":"4."},additionalText:["<b>Informações complementares:</b>","Próprio - recurso físico de propriedade da operadora, ou de sociedade controlada pela operadora, ou ainda, de sociedade controladora da operadora. Médicos cooperados são considerados recursos próprios da operadora.","Contratualizado - relação estabelecida por meio de instrumento jurídico assinado entre a Unimed e o prestador de saúde."]},
+{code:"3.",text:"Qual é o tipo do prestador?",answers:{"Cooperado":"3.1.","Pessoa física não cooperado":"4.","Pessoa jurídica":"4."},additionalText:["<b>Informações complementares:</b>","Pessoa jurídica - refere-se à clínicas, laboratórios, centro de diagnósticos, pronto atendimento, pronto socorro e outros tipos de estabelecimentos não hospitalares."]},
+{code:"3.1.",text:"A Singular é aderente ao serviço CEMPRE de rede direta?",answers:{"Sim":"R.3.1_1.","Não":"R.3.1_2."},additionalText:["<b>Informações complementares:</b>","CEMPRE - Central Estadual de Manutenção de Rede de Prestadores. Serviço prestado às Singulares do Estado do Paraná pela Assessoria Regulamentar da Federação. Clique <a href=' https://www.unimed.coop.br/site/web/assessoriaregulamentarpr-parana/cempre' target='_blank' >aqui</a> para acessar a página do serviço."]},
+{code:"R.3.1_1.",text:"Conforme RN 567, é permitida a exclusão de cooperado sem apresentar prestador <b>substituto</b>. A Singular deverá solicitar a exclusão do prestador via SIR RPS, clique no botão abaixo para acesso rápido à plataforma.",answers:{"SIR RPS":{"url":"https://sir.adm.br/cempre/"}},additionalText:["<b>Informações complementares:</b>","Caso precise de auxílio para o preenchimento do formulário eletrônico no SIR-RPS, leia o passo a passo no <a href='manual_sir.pdf' target='_blank' >Manual do Usuário. </a>","A comunicação aos beneficiários deve permanecer acessível por cento e oitenta dias."]},
+{code:"R.3.1_2.",text:"Conforme RN 567 é permitida a exclusão de cooperado, não sendo necessário apresentar <b>substituto</b>. A Singular deverá solicitar exclusão do prestador por meio do envio de arquivo XML de exclusão (extensão RPE) para ANS. <br>Para mais informações, entre em contato com a Assessoria Regulamentar: <a href='mailto:cempre@unimedpr.coop.br'>cempre@unimedpr.coop.br</a>.",answers:{},additionalText:["<b>Informações complementares:</b>","A comunicação aos beneficiários deve permanecer acessível por cento e oitenta dias."]},
+{code:"4.",text:"Houve suspensão do atendimento?",answers:{"Sim":"5.","Não":"6."}},
+{code:"5.",text:"Qual foi o motivo da suspensão??",answers:{"Suspensão em massa pelo prestador como método coercitivo":"5.1.","Suspensão definitiva pelo prestador, sem cumprimento do prazo para notificação ou não renovação contratual estabelecido entre as partes":"10.","Rescisão contratual por fraude ou infração das normas sanitárias e fiscais em vigor":"10.","Outros":"R.5_1."}},
+{code:"R.5_1.",text:"<br>Para mais informações, entre em contato com a Assessoria Regulamentar: <a href='mailto:cempre@unimedpr.coop.br'>cempre@unimedpr.coop.br</a>.",answers:{}},
+{code:"5.1.",text:"A Singular é aderente ao serviço CEMPRE de rede direta?",answers:{"Sim":"R.5.1_1.","Não":"R.5.1_2."},additionalText:["<b>Informações complementares:</b>","CEMPRE - Central Estadual de Manutenção de Rede de Prestadores. Serviço prestado às Singulares do Estado do Paraná pela Assessoria Regulamentar da Federação. Clique <a href=' https://www.unimed.coop.br/site/web/assessoriaregulamentarpr-parana/cempre' target='_blank' >aqui</a> para acessar a página do serviço."]},
+{code:"R.5.1_1.",text:"Havendo suspensão em massa pelo prestador como método coercitivo, o prestador poderá ser <b>excluído</b>, mediante comunicação aos beneficiários, sem necessidade de apresentar <b>substituto</b>. A Singular deverá solicitar a exclusão via SIR RPS.<br>Clique no botão abaixo para acesso rápido à plataforma.",answers:{"SIR RPS":{"url":"https://sir.adm.br/cempre/"}},additionalText:["<b>Informações complementares:</b>","Caso precise de auxílio para o preenchimento do formulário eletrônico no SIR-RPS, leia o passo a passo no <a href='manual_sir.pdf' target='_blank' >Manual do Usuário. </a>","A comunicação aos beneficiários deve permanecer acessível por cento e oitenta dias."]},
+{code:"R.5.1_2.",text:"Havendo suspensão em massa pelo prestador como método coercitivo, o prestador poderá ser <b>excluído</b>, mediante comunicação aos beneficiários, sem necessidade de apresentar <b>substituto</b>. A Singular deverá solicitar a exclusão por meio do envio de arquivo XML de exclusão (extensão RPE) para ANS.<br>Para mais informações, entre em contato com a Assessoria Regulamentar: <a href='mailto:cempre@unimedpr.coop.br'>cempre@unimedpr.coop.br</a>.",answers:{},additionalText:["<b>Informações complementares:</b>","A comunicação aos beneficiários deve permanecer acessível por cento e oitenta dias."]},
+{code:"6.",text:"Serão <b>excluídos</b> todos os serviços contratados com o prestador?",answers:{"Sim":"7.","Não":"6.1."}},
+{code:"6.1.",text:"Será <b>excluído</b> somente o serviço de urgência e emergência contratado?",answers:{"Sim":"6.2.","Não":"6.3."}},
+{code:"6.2.",text:"A Singular é aderente ao serviço CEMPRE de rede direta?",answers:{"Sim":"R.6.2_1.","Não":"R.6.2_2.",},additionalText:["<b>Informações complementares:</b>","CEMPRE - Central Estadual de Manutenção de Rede de Prestadores. Serviço prestado às Singulares do Estado do Paraná pela Assessoria Regulamentar da Federação. Clique <a href=' https://www.unimed.coop.br/site/web/assessoriaregulamentarpr-parana/cempre' target='_blank' >aqui</a> para acessar a página do serviço."]},
+{code:"R.6.2_1.",text:"A operadora deverá comunicar aos beneficiários sobre a exclusão parcial e onde ele poderá ser atendido. O campo disponibilidade de serviço deverá ser alterado de total para parcial e o serviço de urgência/emergência deverá ser alterado de sim para não. A Singular deverá solicitar alteração via SIR RPS.<br>Clique no botão abaixo para acesso rápido à plataforma.",answers:{"SIR RPS":{"url":"https://sir.adm.br/cempre/"}},additionalText:["<b>Informações complementares:</b>","Caso precise de auxílio para o preenchimento do formulário eletrônico no SIR-RPS, leia o passo a passo no <a href='manual_sir.pdf' target='_blank' >Manual do Usuário. </a>","Disponibilidade dos serviços - total: contratação de todos os serviços disponibilizados pelo estabelecimento; parcial: contratação de parte dos serviços disponibilizados pela estabelecimento.","A comunicação aos beneficiários deve permanecer acessível por cento e oitenta dias."]},
+{code:"R.6.2_2.",text:"A operadora deverá comunicar aos beneficiários sobre a exclusão parcial e onde ele poderá ser atendido. O campo disponibilidade de serviço deverá ser alterado de total para parcial e o serviço de urgência/emergência deverá ser alterado de sim para não. A Singular deverá solicitar a alteração por meio do envio de arquivo XML de alteração (extensão RPA) para ANS.<br>Para mais informações, entre em contato com a Assessoria Regulamentar: <a href='mailto:cempre@unimedpr.coop.br'>cempre@unimedpr.coop.br</a>.",answers:{},additionalText:["<b>Informações complementares:</b>","Disponibilidade dos serviços - total: contratação de todos os serviços disponibilizados pelo estabelecimento; parcial: contratação de parte dos serviços disponibilizados pela estabelecimento.","A comunicação aos beneficiários deve permanecer acessível por cento e oitenta dias."]},
+{code:"6.3.",text:"Serão excluídas especialidades contratadas pela operadora?",answers:{"Sim":"6.4.","Não":"6.5."}},
+{code:"6.4.",text:"A Singular é aderente ao serviço CEMPRE de rede direta?",answers:{"Sim":"R.6.4_1.","Não":"R.6.4_2."},additionalText:["<b>Informações complementares:</b>","CEMPRE - Central Estadual de Manutenção de Rede de Prestadores. Serviço prestado às Singulares do Estado do Paraná pela Assessoria Regulamentar da Federação. Clique <a href=' https://www.unimed.coop.br/site/web/assessoriaregulamentarpr-parana/cempre' target='_blank' >aqui</a> para acessar a página do serviço."]},
+{code:"R.6.4_1.",text:"A operadora deverá comunicar aos beneficiários sobre a exclusão parcial e onde ele poderá ser atendido. A Singular deverá solicitar a alteração da disponibilidade de serviço de total para parcial via SIR RPS.<br>Clique no botão abaixo para acesso rápido à plataforma.",answers:{"SIR RPS":{"url":"https://sir.adm.br/cempre/"}},additionalText:["<b>Informações complementares:</b>","Caso precise de auxílio para o preenchimento do formulário eletrônico no SIR-RPS, leia o passo a passo no <a href='manual_sir.pdf' target='_blank' >Manual do Usuário. </a>","Disponibilidade dos serviços - total: contratação de todos os serviços disponibilizados pelo estabelecimento; parcial: contratação de parte dos serviços disponibilizados pela estabelecimento.","A comunicação aos beneficiários deve permanecer acessível por cento e oitenta dias."]},
+{code:"R.6.4_2.",text:"A operadora deverá comunicar aos beneficiários sobre a exclusão parcial e onde ele poderá ser atendido. A Singular deverá solicitar a alteração da disponibilidade de serviço de total para parcial por meio do envio de arquivo XML de alteração (extensão RPA) para ANS.<br>Para mais informações, entre em contato com a Assessoria Regulamentar: <a href='mailto:cempre@unimedpr.coop.br'>cempre@unimedpr.coop.br</a>.",answers:{},additionalText:["<b>Informações complementares:</b>","Disponibilidade dos serviços - total: contratação de todos os serviços disponibilizados pelo estabelecimento; parcial: contratação de parte dos serviços disponibilizados pela estabelecimento.","A comunicação aos beneficiários deve permanecer acessível por cento e oitenta dias."]},
+{code:"6.5.",text:"A Singular é aderente ao serviço CEMPRE de rede direta?",answers:{"Sim":"R.6.5_1.","Não":"R.6.5_2."},additionalText:["<b>Informações complementares:</b>","CEMPRE - Central Estadual de Manutenção de Rede de Prestadores. Serviço prestado às Singulares do Estado do Paraná pela Assessoria Regulamentar da Federação. Clique <a href=' https://www.unimed.coop.br/site/web/assessoriaregulamentarpr-parana/cempre' target='_blank' >aqui</a> para acessar a página do serviço."]},
+{code:"R.6.5_1.",text:"A operadora deverá comunicar aos beneficiários sobre a exclusão parcial e onde ele poderá ser atendido. A Singular deverá solicitar a alteração da disponibilidade de serviço de total para parcial via SIR RPS.<br>Clique no botão abaixo para acesso rápido à plataforma.",answers:{"SIR RPS":{"url":"https://sir.adm.br/cempre/"}},additionalText:["<b>Informações complementares:</b>","Caso precise de auxílio para o preenchimento do formulário eletrônico no SIR-RPS, leia o passo a passo no <a href='manual_sir.pdf' target='_blank' >Manual do Usuário. </a>","Disponibilidade dos serviços - total: contratação de todos os serviços disponibilizados pelo estabelecimento; parcial: contratação de parte dos serviços disponibilizados pela estabelecimento.","A comunicação aos beneficiários deve permanecer acessível por cento e oitenta dias."]},
+{code:"R.6.5_2.",text:"A operadora deverá comunicar aos beneficiários sobre a exclusão parcial e onde ele poderá ser atendido. A Singular deverá solicitar a alteração da disponibilidade de serviço de total para parcial por meio do envio de arquivo XML de alteração (extensão RPA) para ANS.<br>Para mais informações, entre em contato com a Assessoria Regulamentar: <a href='mailto:cempre@unimedpr.coop.br'>cempre@unimedpr.coop.br</a>.",answers:{},additionalText:["<b>Informações complementares:</b>","Disponibilidade dos serviços - total: contratação de todos os serviços disponibilizados pelo estabelecimento; parcial: contratação de parte dos serviços disponibilizados pela estabelecimento.","A comunicação aos beneficiários deve permanecer acessível por cento e oitenta dias."]},
+{code:"7.",text:"A operadora teve comercialização de produtos suspensa em área de atuação que inclua o município onde o prestador a ser <b>excluído</b> está localizado, nos últimos dois ciclos de monitoramento da garantia de atendimento?",answers:{"Sim":"7.1.5.","Não":"7.1."},additionalText:["<b>Informações complementares:</b>","A partir do resultado do monitoramento, as operadoras reiteradamente com pior resultado são avaliadas e para aquelas que apresentam risco à assistência à saúde são identificados os planos que terão o ingresso de novos beneficiários vedado temporariamente. <br>Para mais informações clique <a href='https://www.gov.br/ans/pt-br/assuntos/informacoes-e-avaliacoes-de-operadoras/monitoramento-de-garantia-de-atendimento' target='_blank' >aqui</a>.","Caso a operadora se enquadre nesta situação, precisará obrigatoriamente apresentar prestador substituto, não podendo utilizar de nenhuma exceção prevista na RN 567 que permita a exclusão do prestador sem substituição."]},
+{code:"7.1.",text:"A operadora está em regime especial de direção técnica?",answers:{"Sim":"7.1.5.","Não":"7.1.1."},additionalText:["<b>Informações complementares:</b>","Regime Especial de direção técnica - consiste no acompanhamento in loco realizado por agente nomeado pela ANS para verificar as causas de anormalidades que coloquem em risco a continuidade e a qualidade da assistência prestada aos beneficiários.","Caso a operadora se enquadre nesta situação, precisará obrigatoriamente apresentar prestador substituto, não podendo utilizar de nenhuma exceção prevista na RN 567 que permita a exclusão do prestador sem substituição."]},
+{code:"7.1.1.",text:"Houve a rescisão de contrato coletivo que tenha ocasionado redução de cinquenta por cento ou mais do total de beneficiários do plano de saúde no município onde o prestador a ser <b>excluído</b> está localizado?",answers:{"Sim":"7.1.1.1.","Não":"7.1.2."},additionalText:["<b>Informações complementares:</b>","Caso a operadora se enquadre nesta situação, o prestador poderá ser <b>excluído</b> sem necessidade da operadora apresentar <b>substituto</b>. Está exceção está prevista na RN 567."]},
+{code:"7.1.1.1.",text:"A Singular é aderente ao serviço CEMPRE de rede direta?",answers:{"Sim":"R.7.1.1.1_1.","Não":"R.7.1.1.1_2."},additionalText:["<b>Informações complementares:</b>","CEMPRE - Central Estadual de Manutenção de Rede de Prestadores. Serviço prestado às Singulares do Estado do Paraná pela Assessoria Regulamentar da Federação. Clique <a href=' https://www.unimed.coop.br/site/web/assessoriaregulamentarpr-parana/cempre' target='_blank' >aqui</a> para acessar a página do serviço."]},
+{code:"R.7.1.1.1_1.",text:"Ocorrendo a rescisão de contrato coletivo que resulte na redução de cinquenta por cento ou mais do total de beneficiários do plano de saúde no município onde o prestador a ser excluído está localizado, ele poderá ser <b>excluído</b>, mediante comunicação aos beneficiários, sem necessidade de apresentar <b>substituto</b>. A Singular deverá solicitar a exclusão via SIR RPS.<br>Clique no botão abaixo para acesso rápido à plataforma.",answers:{"SIR RPS":{"url":"https://sir.adm.br/cempre/"}},additionalText:["<b>Informações complementares:</b>","Caso precise de auxílio para o preenchimento do formulário eletrônico no SIR-RPS, leia o passo a passo no <a href='manual_sir.pdf' target='_blank' >Manual do Usuário. </a>","A comunicação aos beneficiários deve permanecer acessível por cento e oitenta dias.","Caso a Singular deseje, poderá optar pela substituição do prestador. Clique <a href='#' data-question-code='7.2.'>aqui</a> para seguir o fluxo de substituição."]},
+{code:"R.7.1.1.1_2.",text:"Ocorrendo a rescisão de contrato coletivo que resulte na redução de cinquenta por cento ou mais do total de beneficiários do plano de saúde no município onde o prestador a ser excluído está localizado, ele poderá ser <b>excluído</b>, mediante comunicação aos beneficiários, sem necessidade de apresentar <b>substituto</b>. A Singular deverá solicitar a exclusão por meio do envio de arquivo XML de exclusão (extensão RPE) para ANS.<br>Para mais informações, entre em contato com a Assessoria Regulamentar: <a href='mailto:cempre@unimedpr.coop.br'>cempre@unimedpr.coop.br</a>.",answers:{},additionalText:["<b>Informações complementares:</b>","A comunicação aos beneficiários deve permanecer acessível por cento e oitenta dias.","Caso a Singular deseje, poderá optar pela substituição do prestador. Clique <a href='#' data-question-code='7.2.'>aqui</a> para seguir o fluxo de substituição."]},
+{code:"7.1.2.",text:"Houve ausência de prestação de serviço para o plano de saúde por no mínimo doze meses consecutivos?",answers:{"Sim":"7.1.2.1.","Não":"7.1.3."},additionalText:["<b>Informações complementares:</b>","Caso o prestador se enquadre nesta situação, ele poderá ser <b>excluído</b> sem necessidade da operadora apresentar <b>substituto</b>. Está exceção está prevista na RN 567.","A exceção não é válida quando a ausência de prestação de serviço tenha ocorrido por motivo de suspensão formalizada acordada entre as partes."]},
+{code:"7.1.2.1.",text:"A Singular é aderente ao serviço CEMPRE de rede direta?",answers:{"Sim":"R.7.1.2.1_1.","Não":"R.7.1.2.1_2."},additionalText:["<b>Informações complementares:</b>","CEMPRE - Central Estadual de Manutenção de Rede de Prestadores. Serviço prestado às Singulares do Estado do Paraná pela Assessoria Regulamentar da Federação. Clique <a href=' https://www.unimed.coop.br/site/web/assessoriaregulamentarpr-parana/cempre' target='_blank' >aqui</a> para acessar a página do serviço."]},
+{code:"R.7.1.2.1_1.",text:"Não havendo prestação de serviço para o plano de saúde por doze meses consecutivos, o prestador poderá ser <b>excluído</b>, mediante comunicação aos beneficiários, sem necessidade de apresentar <b>substituto</b>. A Singular deverá solicitar a exclusão via SIR RPS.<br>Clique no botão abaixo para acesso rápido à plataforma.",answers:{"SIR RPS":{"url":"https://sir.adm.br/cempre/"}},additionalText:["<b>Informações complementares:</b>","Caso precise de auxílio para o preenchimento do formulário eletrônico no SIR-RPS, leia o passo a passo no <a href='manual_sir.pdf' target='_blank' >Manual do Usuário. </a>","A comunicação aos beneficiários deve permanecer acessível por cento e oitenta dias.","Caso a Singular deseje, poderá optar pela substituição do prestador. Clique <a href='#' data-question-code='7.2.'>aqui</a> para seguir o fluxo de substituição."]},
+{code:"R.7.1.2.1_2.",text:"Não havendo prestação de serviço para o plano de saúde por doze meses consecutivos, o prestador poderá ser <b>excluído</b>, mediante comunicação aos beneficiários, sem necessidade de apresentar <b>substituto</b>. A Singular deverá solicitar a exclusão por meio do envio de arquivo XML de exclusão (extensão RPE) para ANS.<br>Para mais informações, entre em contato com a Assessoria Regulamentar: <a href='mailto:cempre@unimedpr.coop.br'>cempre@unimedpr.coop.br</a>.",answers:{},additionalText:["<b>Informações complementares:</b>","A comunicação aos beneficiários deve permanecer acessível por cento e oitenta dias.","Caso a Singular deseje, poderá optar pela substituição do prestador. Clique <a href='#' data-question-code='7.2.'>aqui</a> para seguir o fluxo de substituição."]},
+{code:"7.1.3.",text:"A operadora comprovou que houve qualquer tipo de exigência de prestação pecuniária por parte do prestador ao beneficiário de plano de saúde, por qualquer meio de pagamento, referente aos procedimentos contratados, respeitados os limites de cobertura e a existência de mecanismos de regulação financeira previstos no contrato do beneficiário?",answers:{"Sim":"7.1.3.1.","Não":"7.1.5."},additionalText:["<b>Informações complementares:</b>","Caso o prestador se enquadre nesta situação, ele poderá ser <b>excluído</b> sem necessidade da operadora apresentar <b>substituto</b>. Está exceção está prevista na RN 567."]},
+{code:"7.1.3.1.",text:"A Singular é aderente ao serviço CEMPRE de rede direta?",answers:{"Sim":"R.7.1.3.1_1.","Não":"R.7.1.3.1_2."},additionalText:["<b>Informações complementares:</b>","CEMPRE - Central Estadual de Manutenção de Rede de Prestadores. Serviço prestado às Singulares do Estado do Paraná pela Assessoria Regulamentar da Federação. Clique <a href=' https://www.unimed.coop.br/site/web/assessoriaregulamentarpr-parana/cempre' target='_blank' >aqui</a> para acessar a página do serviço."]},
+{code:"R.7.1.3.1_1.",text:"Havendo comprovação que o prestador exigiu pagamento do beneficiário pelos procedimentos, respeitados os limites de cobertura e a existência de mecanismos de regulação financeira previstos no contrato do beneficiário, o prestador poderá ser <b>excluído</b>, mediante comunicação aos beneficiários, sem necessidade de apresentar <b>substituto</b>. A Singular deverá solicitar a exclusão via SIR RPS.<br>Clique no botão abaixo para acesso rápido à plataforma.",answers:{"SIR RPS":{"url":"https://sir.adm.br/cempre/"}},additionalText:["<b>Informações complementares:</b>","Caso precise de auxílio para o preenchimento do formulário eletrônico no SIR-RPS, leia o passo a passo no <a href='manual_sir.pdf' target='_blank' >Manual do Usuário. </a>","A comunicação aos beneficiários deve permanecer acessível por cento e oitenta dias.","Caso a Singular deseje, poderá optar pela substituição do prestador. Clique <a href='#' data-question-code='7.2.'>aqui</a> para seguir o fluxo de substituição."]},
+{code:"R.7.1.3.1_2.",text:"Havendo comprovação que o prestador exigiu pagamento do beneficiário pelos procedimentos, respeitados os limites de cobertura e a existência de mecanismos de regulação financeira previstos no contrato do beneficiário, o prestador poderá ser <b>excluído</b>, mediante comunicação aos beneficiários, sem necessidade de apresentar <b>substituto</b>. A Singular deverá solicitar a exclusão por meio do envio de arquivo XML de exclusão (extensão RPE) para ANS.<br>Para mais informações, entre em contato com a Assessoria Regulamentar: <a href='mailto:cempre@unimedpr.coop.br'>cempre@unimedpr.coop.br</a>.",answers:{},additionalText:["<b>Informações complementares:</b>","A comunicação aos beneficiários deve permanecer acessível por cento e oitenta dias.","Caso a Singular deseje, poderá optar pela substituição do prestador. Clique <a href='#' data-question-code='7.2.'>aqui</a> para seguir o fluxo de substituição."]},
+{code:"7.1.5.",text:"Será necessário apresentar prestador <b>substituto</b>. Clique no botão abaixo para continuar.",answers:{"Continuar":"7.2."}},
+{code:"7.2.",text:"O estabelecimento a ser <b>excluído</b> possui CNES?",answers:{"Sim":"7.3.","Não":"7.4."},additionalText:["<b>Informações complementares:</b>","Clique <a href=' http://cnes.datasus.gov.br/' target='_blank' >aqui</a> para consultar o site do CNES."]},
+{code:"7.3.",text:"Conforme o CNES, qual é o tipo do estabelecimento a ser <b>excluído</b>?",answers:{"Consultório Isolado":"7.3.1.","Demais tipos de estabelecimentos":"7.3.2."},additionalText:["<b>Informações complementares:</b>","Clique <a href=' http://cnes.datasus.gov.br/' target='_blank' >aqui</a> para consultar o site do CNES."]},
+{code:"7.3.1.",text:"O prestador <b>substituto</b> possui habilitação legal para exercer a mesma profissão do?",answers:{"Sim":"8.","Não":"R.7.3.1_1."}},
+{code:"R.7.3.1_1.",text:"Não é permitida a substituição pois o prestador <b>substituto</b> não possui a mesma habilitação legal do prestador a ser <b>excluído</b>. <br>Para mais informações, entre em contato com a Assessoria Regulamentar: <a href='mailto:cempre@unimedpr.coop.br'>cempre@unimedpr.coop.br</a>.",answers:{}},
+{code:"7.3.2.",text:"Conforme CNES, o prestador <b>substituto</b> possui o mesmo tipo de estabelecimento do prestador a ser <b>excluído</b>?",answers:{"Sim":"7.3.2.1.","Não":"R.7.3.2_1."}},
+{code:"R.7.3.2_1.",text:"A substituição não poderá ser realizada, pois, conforme RN 567, o prestador <b>substituto</b> precisa ter o mesmo tipo de estabelecimento do prestador a ser <b>excluído</b>, utilizando como critério as informações contidas no CNES. <br>Para mais informações, entre em contato com a Assessoria Regulamentar: <a href='mailto:cempre@unimedpr.coop.br'>cempre@unimedpr.coop.br</a>.",answers:{}},
+{code:"7.3.2.1.",text:"Conforme CNES, O prestador <b>substituto</b> possui os mesmos serviços especializados do prestador a ser <b>excluído</b>?",answers:{"Sim":"8.","Não":"7.3.2.2."}},
+{code:"7.3.2.2.",text:"Considerando os serviços contratados com o prestador a ser <b>excluído</b>, existe equivalência dos serviços especializados no prestador <b>substituto</b>?",answers:{"Sim":"8.","Não":"R.7.3.2.2_1."},additionalText:["<b>Informações complementares:</b>","Apenas no caso de ausência ou incompatibilidade ou desatualização de cadastro no CNES do prestador a ser substituído e/ou do que irá substituir, é que a operadora deverá considerar os serviços contratados, utilizando como referência a descrição de tipo de estabelecimento e de serviços especializados adotada pelo CNES para verificação da equivalência dos prestadores."]},
+{code:"R.7.3.2.2_1.",text:"A substituição não poderá ser realizada, pois, conforme RN 567, o prestador <b>substituto</b> precisa ter os mesmos serviços especializados do prestador a ser <b>excluído</b>. <br>Para mais informações, entre em contato com a Assessoria Regulamentar: <a href='mailto:cempre@unimedpr.coop.br'>cempre@unimedpr.coop.br</a>.",answers:{}},
+{code:"7.4.",text:"Qual é o tipo do estabelecimento a ser <b>excluído</b>?",answers:{"Consultório Isolado":"7.4.1.","Demais tipos de estabelecimentos":"7.4.2."}},
+{code:"7.4.1.",text:"O prestador <b>substituto</b> possui a mesma habilitação legal para exercer a profissão?",answers:{"Sim":"8.","Não":"R.7.4.1_1."}},
+{code:"R.7.4.1_1.",text:"Não é permitida a substituição pois o prestador <b>substituto</b> não possui a mesma habilitação legal do prestador a ser <b>excluído</b>. <br>Para mais informações, entre em contato com a Assessoria Regulamentar: <a href='mailto:cempre@unimedpr.coop.br'>cempre@unimedpr.coop.br</a>.",answers:{}},
+{code:"7.4.2.",text:"O prestador <b>substituto</b> possui o mesmo tipo de estabelecimento do prestador a ser <b>excluído</b>?",answers:{"Sim":"7.4.2.2.","Não":"R.7.4.2_1."}},
+{code:"R.7.4.2_1.",text:"A substituição não poderá ser realizada, pois, conforme RN 567, o prestador <b>substituto</b> precisa ter o mesmo tipo de estabelecimento do prestador a ser <b>excluído</b>. <br>Para mais informações, entre em contato com a Assessoria Regulamentar: <a href='mailto:cempre@unimedpr.coop.br'>cempre@unimedpr.coop.br</a>.",answers:{}},
+{code:"7.4.2.2.",text:"Considerando os serviços contratados com o prestador a ser <b>excluído</b>, existe equivalência dos serviços especializados no prestador <b>substituto</b>?",answers:{"Sim":"8.","Não":"R.7.4.2.2_1."},additionalText:["<b>Informações complementares:</b>","Apenas no caso de ausência ou incompatibilidade ou desatualização de cadastro no CNES do prestador a ser substituído e/ou do que irá substituir, é que a operadora deverá considerar os serviços contratados, utilizando como referência a descrição de tipo de estabelecimento e de serviços especializados adotada pelo CNES para verificação da equivalência dos prestadores."]},
+{code:"R.7.4.2.2_1.",text:"A substituição não poderá ser realizada, pois, conforme RN 567, o prestador <b>substituto</b> precisa ter os mesmos serviços especializados do prestador a ser <b>excluído</b>. <br>Para mais informações, entre em contato com a Assessoria Regulamentar: <a href='mailto:cempre@unimedpr.coop.br'>cempre@unimedpr.coop.br</a>.",answers:{}},
+{code:"8.",text:"O prestador <b>substituto</b> está localizado no mesmo município do prestador a ser <b>excluído</b>?",answers:{"Sim":"9.","Não":"R.8_1."},additionalText:["<b>Informações complementares:</b>","Conforme regra de localidade prevista na alteração de rede não hospitalar por substituição, o prestador substituto deverá estar localizado no mesmo município do prestador a ser excluído. Caso exista prestador apto ao credenciamento no município, a operadora deverá contratá-lo. Só poderá ser indicado prestador substituto em outra localidade, desde que a operadora comprove a inexistência de prestador no mesmo município do prestador a ser excluído ou o não interesse do prestador na contratação. Sob essas circunstâncias, conforme a hierarquia prevista na RN 567, deverá ser indicado substituto em municípios limítrofes."]},
+{code:"R.8_1.",text:"Atenção: A operadora deverá possuir qualquer documento que comprove a inexistência ou a tentativa infrutífera de contratação de prestador no mesmo município.",answers:{"Continuar":"8.1."}},
+{code:"8.1.",text:"O prestador <b>substituto</b> está localizado em município limítrofe ao do prestador a ser <b>excluído</b>?",answers:{"Sim":"9.","Não":"R.8.1_1.",},additionalText:["<b>Informações complementares:</b>","Conforme regra de localidade prevista na alteração de rede não hospitalar por substituição, só poderá ser indicado prestador substituto em outra localidade, desde que a operadora comprove que nos municípios limítrofes, há inexistência de prestador substituto ou o não interesse do prestador na contratação. Sob essas circunstâncias, conforme a hierarquia prevista na RN 567, deverá ser indicado substituto na mesma região de saúde a que pertence o município do prestador excluído.","Consulte os municípios limítrofes abaixo. Fonte: <a href='https://www.ipardes.pr.gov.br/Pagina/Cadernos-municipais' target='_blank'>IPARDES</a> e <a href='https://mapasinterativos.ibge.gov.br/recestat/' target='_blank'>IBGE</a>.<br>"],script:"limitrofes.js"},
+{code:"R.8.1_1.",text:"Atenção: A operadora deverá possuir qualquer documento que comprove a inexistência ou a tentativa infrutífera de contratação de prestador em municípios limítrofes.",answers:{"Continuar":"8.2."}},
+{code:"8.2.",text:"O prestador <b>substituto</b> está localizado na mesma região de saúde do prestador a ser <b>excluído</b>?",answers:{"Sim":"9.","Não":"R.8.2_1."},additionalText:["<b>Informações complementares:</b>","A região de saúde é determinada pela IN ANS 16. Consulte os municípios da região de saúde abaixo. Fonte: <a href='https://www.ans.gov.br/images/stories/Legislacao/in/IN_16_-_ANEXO.pdf' target='_blank'>Anexo da IN ANS 16</a>.<br>"],script:"regiao.js"},
+{code:"R.8.2_1.",text:"Seguindo a hierarquia prevista pela RN 567, o prestador precisa estar no mesmo município do prestador a ser excluído. Havendo indisponibilidade ou inexistência no mesmo município, poderá ser indicado prestador em município limítrofe, e em último caso, poderá ser indicado prestador na região de saúde. Como o prestador substituto está fora da região de saúde, não é permitida a substituição.",answers:{}},
+{code:"9.",text:"O prestador <b>substituto</b> já pertence a rede direta da operadora?",answers:{"Sim":"9.2.","Não":"9.2.1."}},
+{code:"9.2.",text:"Há comprovação, através de aditivo contratual, que houve aumento da capacidade de atendimento correspondente aos serviços que estão sendo <b>excluídos</b>?",answers:{"Sim":"9.2.1.","Não":"R.9.2_1."}},
+{code:"R.9.2_1.",text:"Não é permitida a substituição, pois não há comprovação do aumento da capacidade de atendimento no prestador substituto.",answers:{}},
+{code:"9.2.1.",text:"A Singular é aderente ao serviço CEMPRE de rede direta?",answers:{"Sim":"R.9.2.1_1.","Não":"R.9.2.1_2."},additionalText:["<b>Informações complementares:</b>","CEMPRE - Central Estadual de Manutenção de Rede de Prestadores. Serviço prestado às Singulares do Estado do Paraná pela Assessoria Regulamentar da Federação. Clique <a href=' https://www.unimed.coop.br/site/web/assessoriaregulamentarpr-parana/cempre' target='_blank' >aqui</a> para acessar a página do serviço."]},
+{code:"R.9.2.1_1.",text:"É permitida a substituição do prestador não hospitalar, mediante comunicação aos beneficiários. A Singular deverá solicitar a exclusão via SIR RPS.<br> Clique no botão abaixo para acesso rápido à plataforma.",answers:{"SIR RPS":{"url":"https://sir.adm.br/cempre/"}},additionalText:["<b>Informações complementares:</b>","Caso precise de auxílio para o preenchimento do formulário eletrônico no SIR-RPS, leia o passo a passo no <a href='manual_sir.pdf' target='_blank' >Manual do Usuário. </a>","A comunicação aos beneficiários deverá ser realizada com antecedência mínima de trinta dias, contados da data da efetiva substituição, e deve permanecer acessível por cento e oitenta dias."]},
+{code:"R.9.2.1_2.",text:"É permitida a substituição do prestador não hospitalar, mediante comunicação aos beneficiários. A Singular deverá solicitar a exclusão por meio do envio de arquivo XML de exclusão (extensão RPE) para ANS.<br> <br>Para mais informações, entre em contato com a Assessoria Regulamentar: <a href='mailto:cempre@unimedpr.coop.br'>cempre@unimedpr.coop.br</a>.",answers:{},additionalText:["<b>Informações complementares:</b>","A comunicação aos beneficiários deverá ser realizada com antecedência mínima de trinta dias, contados da data da efetiva substituição, e deve permanecer acessível por cento e oitenta dias."]},
+{code:"10.",text:"A operadora teve comercialização de produtos suspensa em área de atuação que inclua o município onde o prestador a ser <b>excluído</b> está localizado, nos últimos dois ciclos de monitoramento da garantia de atendimento?",answers:{"Sim":"10.1.5.","Não":"10.1."},additionalText:["<b>Informações complementares:</b>","A partir do resultado do monitoramento, as operadoras reiteradamente com pior resultado são avaliadas e para aquelas que apresentam risco à assistência à saúde são identificados os planos que terão o ingresso de novos beneficiários vedado temporariamente. <br>Para mais informações clique <a href='https://www.gov.br/ans/pt-br/assuntos/informacoes-e-avaliacoes-de-operadoras/monitoramento-de-garantia-de-atendimento' target='_blank' >aqui</a>.","Caso a operadora se enquadre nesta situação, precisará obrigatoriamente apresentar prestador substituto, não podendo utilizar de nenhuma exceção prevista na RN 567 que permita a exclusão do prestador sem substituição."]},
+{code:"10.1.",text:"A operadora está em regime especial de direção técnica?",answers:{"Sim":"10.1.5.","Não":"10.1.1."},additionalText:["<b>Informações complementares:</b>","Regime Especial de direção técnica - consiste no acompanhamento in loco realizado por agente nomeado pela ANS para verificar as causas de anormalidades que coloquem em risco a continuidade e a qualidade da assistência prestada aos beneficiários.","Caso a operadora se enquadre nesta situação, precisará obrigatoriamente apresentar prestador substituto, não podendo utilizar de nenhuma exceção prevista na RN 567 que permita a exclusão do prestador sem substituição."]},
+{code:"10.1.1.",text:"Houve a rescisão de contrato coletivo que tenha ocasionado na redução de cinquenta por cento ou mais do total de beneficiários do plano de saúde no município onde o prestador a ser <b>excluído</b> está localizado?",answers:{"Sim":"10.1.1.1.","Não":"10.1.2."},additionalText:["<b>Informações complementares:</b>","Caso a operadora se enquadre nesta situação, o prestador poderá ser <b>excluído</b> sem necessidade da operadora apresentar <b>substituto</b>. Está exceção está prevista na RN 567."]},
+{code:"10.1.1.1.",text:"A Singular é aderente ao serviço CEMPRE de rede direta?",answers:{"Sim":"R.10.1.1.1_1.","Não":"R.10.1.1.1_2."},additionalText:["<b>Informações complementares:</b>","CEMPRE: Central Estadual de Manutenção de Rede de Prestadores. Serviço prestado às Singulares do Estado do Paraná pela Assessoria Regulamentar da Federação. Clique <a href=' https://www.unimed.coop.br/site/web/assessoriaregulamentarpr-parana/cempre' target='_blank' >aqui</a> para acessar a página do serviço."]},
+{code:"R.10.1.1.1_1.",text:"Ocorrendo a rescisão de contrato coletivo que resulte na redução de cinquenta por cento ou mais do total de beneficiários do plano de saúde no município onde o prestador a ser excluído está localizado, ele poderá ser <b>excluído</b>, mediante comunicação aos beneficiários, sem necessidade de apresentar <b>substituto</b>. A Singular deverá solicitar a exclusão via SIR RPS.<br>Clique no botão abaixo para acesso rápido à plataforma.",answers:{"SIR RPS":{"url":"https://sir.adm.br/cempre/"}},additionalText:["<b>Informações complementares:</b>","Caso precise de auxílio para o preenchimento do formulário eletrônico no SIR-RPS, leia o passo a passo no <a href='manual_sir.pdf' target='_blank' >Manual do Usuário. </a>","A comunicação aos beneficiários deve permanecer acessível por cento e oitenta dias.","Caso a Singular deseje, poderá optar pela substituição do prestador. Clique <a href='#' data-question-code='10.2.'>aqui</a> para seguir o fluxo de substituição."]},
+{code:"R.10.1.1.1_2.",text:"Ocorrendo a rescisão de contrato coletivo que resulte na redução de cinquenta por cento ou mais do total de beneficiários do plano de saúde no município onde o prestador a ser excluído está localizado, ele poderá ser <b>excluído</b>, mediante comunicação aos beneficiários, sem necessidade de apresentar <b>substituto</b>. A Singular deverá solicitar a exclusão por meio do envio de arquivo XML de exclusão (extensão RPE) para ANS.<br>Para mais informações, entre em contato com a Assessoria Regulamentar: <a href='mailto:cempre@unimedpr.coop.br'>cempre@unimedpr.coop.br</a>.",answers:{},additionalText:["<b>Informações complementares:</b>","A comunicação aos beneficiários deve permanecer acessível por cento e oitenta dias.","Caso a Singular deseje, poderá optar pela substituição do prestador. Clique <a href='#' data-question-code='10.2.'>aqui</a> para seguir o fluxo de substituição."]},
+{code:"10.1.2.",text:"Houve ausência de prestação de serviço para o plano de saúde por no mínimo doze meses consecutivos?",answers:{"Sim":"10.1.2.1.","Não":"10.1.3."},additionalText:["<b>Informações complementares:</b>","Caso o prestador se enquadre nesta situação, ele poderá ser <b>excluído</b> sem necessidade da operadora apresentar <b>substituto</b>. Está exceção está prevista na RN 567.","A exceção não é válida quando a ausência de prestação de serviço tenha ocorrido por motivo de suspensão formalizada acordada entre as partes."]},
+{code:"10.1.2.1.",text:"A Singular é aderente ao serviço CEMPRE de rede direta?",answers:{"Sim":"R.10.1.2.1_1.","Não":"R.10.1.2.1_2."},additionalText:["<b>Informações complementares:</b>","CEMPRE - Central Estadual de Manutenção de Rede de Prestadores. Serviço prestado às Singulares do Estado do Paraná pela Assessoria Regulamentar da Federação. Clique <a href=' https://www.unimed.coop.br/site/web/assessoriaregulamentarpr-parana/cempre' target='_blank' >aqui</a> para acessar a página do serviço."]},
+{code:"R.10.1.2.1_1.",text:"Não havendo prestação de serviço para o plano de saúde por doze meses consecutivos, o prestador poderá ser <b>excluído</b>, mediante comunicação aos beneficiários, sem necessidade de apresentar <b>substituto</b>. A Singular deverá solicitar a exclusão via SIR RPS.<br>Clique no botão abaixo para acesso rápido à plataforma.",answers:{"SIR RPS":{"url":"https://sir.adm.br/cempre/"}},additionalText:["<b>Informações complementares:</b>","Caso precise de auxílio para o preenchimento do formulário eletrônico no SIR-RPS, leia o passo a passo no <a href='manual_sir.pdf' target='_blank' >Manual do Usuário. </a>","A comunicação aos beneficiários deve permanecer acessível por cento e oitenta dias.","Caso a Singular deseje, poderá optar pela substituição do prestador. Clique <a href='#' data-question-code='10.2.'>aqui</a> para seguir o fluxo de substituição."]},
+{code:"R.10.1.2.1_2.",text:"Não havendo prestação de serviço para o plano de saúde por doze meses consecutivos, o prestador poderá ser <b>excluído</b>, mediante comunicação aos beneficiários, sem necessidade de apresentar <b>substituto</b>. A Singular deverá solicitar a exclusão por meio do envio de arquivo XML de exclusão (extensão RPE) para ANS.<br>Para mais informações, entre em contato com a Assessoria Regulamentar: <a href='mailto:cempre@unimedpr.coop.br'>cempre@unimedpr.coop.br</a>.",answers:{},additionalText:["<b>Informações complementares:</b>","A comunicação aos beneficiários deve permanecer acessível por cento e oitenta dias.","Caso a Singular deseje, poderá optar pela substituição do prestador. Clique <a href='#' data-question-code='10.2.'>aqui</a> para seguir o fluxo de substituição."]},
+{code:"10.1.3.",text:"A operadora comprovou que houve qualquer tipo de exigência de prestação pecuniária por parte do prestador ao beneficiário de plano de saúde, por qualquer meio de pagamento, referente aos procedimentos contratados, respeitados os limites de cobertura e a existência de mecanismos de regulação financeira previstos no contrato do beneficiário?",answers:{"Sim":"10.1.3.1.","Não":"10.1.5."},additionalText:["<b>Informações complementares:</b>","Caso o prestador se enquadre nesta situação, ele poderá ser <b>excluído</b> sem necessidade da operadora apresentar <b>substituto</b>. Está exceção está prevista na RN 567."]},
+{code:"10.1.3.1.",text:"A Singular é aderente ao serviço CEMPRE de rede direta?",answers:{"Sim":"R.7.1.3.1_1.","Não":"R.7.1.3.1_2."},additionalText:["<b>Informações complementares:</b>","CEMPRE - Central Estadual de Manutenção de Rede de Prestadores. Serviço prestado às Singulares do Estado do Paraná pela Assessoria Regulamentar da Federação. Clique <a href=' https://www.unimed.coop.br/site/web/assessoriaregulamentarpr-parana/cempre' target='_blank' >aqui</a> para acessar a página do serviço."]},
+{code:"R.10.1.3.1_1.",text:"Havendo comprovação que o prestador exigiu pagamento do beneficiário pelos procedimentos, respeitados os limites de cobertura e a existência de mecanismos de regulação financeira previstos no contrato do beneficiário, o prestador poderá ser <b>excluído</b>, mediante comunicação aos beneficiários, sem necessidade de apresentar <b>substituto</b>. A Singular deverá solicitar a exclusão via SIR RPS.<br>Clique no botão abaixo para acesso rápido à plataforma.",answers:{"SIR RPS":{"url":"https://sir.adm.br/cempre/"}},additionalText:["<b>Informações complementares:</b>","Caso precise de auxílio para o preenchimento do formulário eletrônico no SIR-RPS, leia o passo a passo no <a href='manual_sir.pdf' target='_blank' >Manual do Usuário. </a>","A comunicação aos beneficiários deve permanecer acessível por cento e oitenta dias.","Caso a Singular deseje, poderá optar pela substituição do prestador. Clique <a href='#' data-question-code='10.2.'>aqui</a> para seguir o fluxo de substituição."]},
+{code:"R.10.1.3.1_2.",text:"Havendo comprovação que o prestador exigiu pagamento do beneficiário pelos procedimentos, respeitados os limites de cobertura e a existência de mecanismos de regulação financeira previstos no contrato do beneficiário, o prestador poderá ser <b>excluído</b>, mediante comunicação aos beneficiários, sem necessidade de apresentar <b>substituto</b>. A Singular deverá solicitar a exclusão por meio do envio de arquivo XML de exclusão (extensão RPE) para ANS.<br>Para mais informações, entre em contato com a Assessoria Regulamentar: <a href='mailto:cempre@unimedpr.coop.br'>cempre@unimedpr.coop.br</a>.",answers:{},additionalText:["<b>Informações complementares:</b>","A comunicação aos beneficiários deve permanecer acessível por cento e oitenta dias.","Caso a Singular deseje, poderá optar pela substituição do prestador. Clique <a href='#' data-question-code='10.2.'>aqui</a> para seguir o fluxo de substituição."]},
+{code:"10.1.5.",text:"Será necessário apresentar prestador <b>substituto</b>. Clique no botão abaixo para continuar.",answers:{"Continuar":"10.2."}},
+{code:"10.2.",text:"O estabelecimento a ser <b>excluído</b> possui CNES?",answers:{"Sim":"10.3.","Não":"10.4."},additionalText:["<b>Informações complementares:</b>","Clique <a href=' http://cnes.datasus.gov.br/' target='_blank' >aqui</a> para consultar o site do CNES."]},
+{code:"10.3.",text:"Conforme o CNES, qual é o tipo do estabelecimento a ser <b>excluído</b>?",answers:{"Consultório Isolado":"10.3.1.","Demais tipos de estabelecimentos":"10.3.2."},additionalText:["<b>Informações complementares:</b>","Clique <a href=' http://cnes.datasus.gov.br/' target='_blank' >aqui</a> para consultar o site do CNES."]},
+{code:"10.3.1.",text:"O prestador <b>substituto</b> possui habilitação legal para exercer a mesma profissão do prestador <b>excluído</b>?",answers:{"Sim":"11.","Não":"R.10.3.1_1."}},
+{code:"R.10.3.1_1.",text:"Não é permitida a substituição pois o prestador <b>substituto</b> não possui a mesma habilitação legal do prestador a ser <b>excluído</b>. A Singular deverá comunicar a exclusão aos beneficiários na data em que tomou conhecimento da suspensão do atendimento do prestador a ser <b>excluído</b> e providenciar sua substituição e comunicação aos beneficiários no prazo de sessenta dias, contados da data que tomou conhecimento do fato da suspensão. <br>Para mais informações, entre em contato com a Assessoria Regulamentar: <a href='mailto:cempre@unimedpr.coop.br'>cempre@unimedpr.coop.br</a>.",answers:{}},
+{code:"10.3.2.",text:"Conforme CNES, o prestador <b>substituto</b> possui o mesmo tipo de estabelecimento do prestador a ser <b>excluído</b>?",answers:{"Sim":"10.3.2.1.","Não":"R.10.3.2_1."}},
+{code:"R.10.3.2_1.",text:"A substituição não poderá ser realizada, pois, conforme RN 567, o prestador <b>substituto</b> precisa ter o mesmo tipo de estabelecimento do prestador a ser <b>excluído</b>, utilizando como critério as informações contidas no CNES. A Singular deverá comunicar a exclusão aos beneficiários na data em que tomou conhecimento da suspensão do atendimento do prestador a ser <b>excluído</b> e providenciar sua substituição e comunicação aos beneficiários no prazo de sessenta dias, contados da data que tomou conhecimento do fato da suspensão. <br>Para mais informações, entre em contato com a Assessoria Regulamentar: <a href='mailto:cempre@unimedpr.coop.br'>cempre@unimedpr.coop.br</a>.",answers:{}},
+{code:"10.3.2.1.",text:"Conforme CNES, O prestador <b>substituto</b> possui os mesmos serviços especializados do prestador a ser <b>excluído</b>?",answers:{"Sim":"11.","Não":"10.3.2.2."}},
+{code:"10.3.2.2.",text:"Considerando os serviços contratados com o prestador a ser <b>excluído</b>, existe equivalência dos serviços especializados no prestador <b>substituto</b>?",answers:{"Sim":"11.","Não":"R.10.3.2.2_1."},additionalText:["<b>Informações complementares:</b>","Apenas no caso de ausência ou incompatibilidade ou desatualização de cadastro no CNES do prestador a ser substituído e/ou do que irá substituir, é que a operadora deverá considerar os serviços contratados, utilizando como referência a descrição de tipo de estabelecimento e de serviços especializados adotada pelo CNES para verificação da equivalência dos prestadores."]},
+{code:"R.10.3.2.2_1.",text:"A substituição não poderá ser realizada, pois, conforme RN 567, o prestador <b>substituto</b> precisa ter os mesmos serviços especializados do prestador a ser <b>excluído</b>. A Singular deverá comunicar a exclusão aos beneficiários na data em que tomou conhecimento da suspensão do atendimento do prestador a ser <b>excluído</b> e providenciar sua substituição e comunicação aos beneficiários no prazo de sessenta dias, contados da data que tomou conhecimento do fato da suspensão. <br>Para mais informações, entre em contato com a Assessoria Regulamentar: <a href='mailto:cempre@unimedpr.coop.br'>cempre@unimedpr.coop.br</a>.",answers:{}},
+{code:"10.4.",text:"Qual é o tipo do estabelecimento a ser <b>excluído</b>?",answers:{"Consultório Isolado":"10.4.1.","Demais tipos de estabelecimentos":"10.4.2."}},
+{code:"10.4.1.",text:"O prestador <b>substituto</b> possui a mesma habilitação legal para exercer a profissão?",answers:{"Sim":"11.","Não":"R.10.4.1_1."}},
+{code:"R.10.4.1_1.",text:"Não é permitida a substituição pois o prestador <b>substituto</b> não possui a mesma habilitação legal do prestador a ser <b>excluído</b>. A Singular deverá comunicar a exclusão aos beneficiários na data em que tomou conhecimento da suspensão do atendimento do prestador a ser <b>excluído</b> e providenciar sua substituição e comunicação aos beneficiários no prazo de sessenta dias, contados da data que tomou conhecimento do fato da suspensão. <br>Para mais informações, entre em contato com a Assessoria Regulamentar: <a href='mailto:cempre@unimedpr.coop.br'>cempre@unimedpr.coop.br</a>.",answers:{}},
+{code:"10.4.2.",text:"O prestador <b>substituto</b> possui o mesmo tipo de estabelecimento do prestador a ser <b>excluído</b>?",answers:{"Sim":"10.4.2.2.","Não":"R.10.4.2_1."}},
+{code:"R.10.4.2_1.",text:"A substituição não poderá ser realizada, pois, conforme RN 567, o prestador <b>substituto</b> precisa ter o mesmo tipo de estabelecimento do prestador a ser <b>excluído</b>. A Singular deverá comunicar a exclusão aos beneficiários na data em que tomou conhecimento da suspensão do atendimento do prestador a ser <b>excluído</b> e providenciar sua substituição e comunicação aos beneficiários no prazo de sessenta dias, contados da data que tomou conhecimento do fato da suspensão. <br>Para mais informações, entre em contato com a Assessoria Regulamentar: <a href='mailto:cempre@unimedpr.coop.br'>cempre@unimedpr.coop.br</a>.",answers:{}},
+{code:"10.4.2.2.",text:"Considerando os serviços contratados com o prestador a ser <b>excluído</b>, existe equivalência dos serviços especializados no prestador <b>substituto</b>?",answers:{"Sim":"11.","Não":"R.10.4.2.2_1."},additionalText:["<b>Informações complementares:</b>","Apenas no caso de ausência ou incompatibilidade ou desatualização de cadastro no CNES do prestador a ser substituído e/ou do que irá substituir, é que a operadora deverá considerar os serviços contratados, utilizando como referência a descrição de tipo de estabelecimento e de serviços especializados adotada pelo CNES para verificação da equivalência dos prestadores."]},
+{code:"R.10.4.2.2_1.",text:"A substituição não poderá ser realizada, pois, conforme RN 567, o prestador <b>substituto</b> precisa ter os mesmos serviços especializados do prestador a ser <b>excluído</b>. >. A Singular deverá comunicar a exclusão aos beneficiários na data em que tomou conhecimento da suspensão do atendimento do prestador a ser <b>excluído</b> e providenciar sua substituição e comunicação aos beneficiários no prazo de sessenta dias, contados da data que tomou conhecimento do fato da suspensão. <br>Para mais informações, entre em contato com a Assessoria Regulamentar: <a href='mailto:cempre@unimedpr.coop.br'>cempre@unimedpr.coop.br</a>.",answers:{}},
+{code:"11.",text:"O prestador <b>substituto</b> está localizado no mesmo município do prestador a ser <b>excluído</b>?",answers:{"Sim":"12.","Não":"R.11_1."},additionalText:["<b>Informações complementares:</b>","Conforme regra de localidade prevista na alteração de rede não hospitalar por substituição, o prestador substituto deverá estar localizado no mesmo município do prestador a ser excluído. Caso exista prestador apto ao credenciamento no município, a operadora deverá contratá-lo. Só poderá ser indicado prestador substituto em outra localidade, desde que a operadora comprove a inexistência de prestador no mesmo município do prestador a ser excluído ou o não interesse do prestador na contratação. Sob essas circunstâncias, conforme a hierarquia prevista na RN 567, deverá ser indicado substituto em municípios limítrofes."]},
+{code:"R.11_1.",text:"Atenção: A operadora deverá possuir qualquer documento que comprove a inexistência ou a tentativa infrutífera de contratação de prestador no mesmo município.",answers:{"Continuar":"11.1."}},
+{code:"11.1.",text:"O prestador <b>substituto</b> está localizado em município limítrofe ao do prestador a ser <b>excluído</b>?",answers:{"Sim":"12.","Não":"R.11.1_1.",},additionalText:["<b>Informações complementares:</b>","Conforme regra de localidade prevista na alteração de rede não hospitalar por substituição, só poderá ser indicado prestador substituto em outra localidade, desde que a operadora comprove que nos municípios limítrofes, há inexistência de prestador substituto ou o não interesse do prestador na contratação. Sob essas circunstâncias, conforme a hierarquia prevista na RN 567, deverá ser indicado substituto na mesma região de saúde a que pertence o município do prestador excluído.","Consulte os municípios limítrofes abaixo. Fonte: <a href='https://www.ipardes.pr.gov.br/Pagina/Cadernos-municipais' target='_blank'>IPARDES</a> e <a href='https://mapasinterativos.ibge.gov.br/recestat/' target='_blank'>IBGE</a>.<br>"],script:"limitrofes.js"},
+{code:"R.11.1_1.",text:"Atenção: A operadora deverá possuir qualquer documento que comprove a inexistência ou a tentativa infrutífera de contratação de prestador em municípios limítrofes.",answers:{"Continuar":"11.2."}},
+{code:"11.2.",text:"O prestador <b>substituto</b> está localizado na mesma região de saúde do prestador a ser <b>excluído</b>?",answers:{"Sim":"12.","Não":"R.11.2_1."},additionalText:["<b>Informações complementares:</b>","A região de saúde é determinada pela IN ANS 16. Consulte os municípios da região de saúde abaixo. Fonte: <a href='https://www.ans.gov.br/images/stories/Legislacao/in/IN_16_-_ANEXO.pdf' target='_blank'>Anexo da IN ANS 16</a>.<br>"],script:"regiao.js"},
+{code:"R.11.2_1.",text:"Como o prestador substituto está fora da região de saúde, não é permitida a substituição. A Singular deverá comunicar a exclusão aos beneficiários na data em que tomou conhecimento da suspensão do atendimento do prestador a ser <b>excluído</b> e providenciar sua substituição e comunicação aos beneficiários no prazo de sessenta dias, contados da data que tomou conhecimento do fato da suspensão",answers:{}},
+{code:"12.",text:"O prestador <b>substituto</b> já pertence a rede direta da operadora?",answers:{"Sim":"12.1.","Não":"12.2.1."}},
+{code:"12.1.",text:"Há comprovação, através de aditivo contratual, que houve aumento da capacidade de atendimento correspondente aos serviços que estão sendo <b>excluídos</b>?",answers:{"Sim":"12.2.1.","Não":"R.12.1_1."}},
+{code:"R.12.1_1.",text:"Não é permitida a substituição, pois não há comprovação do aumento da capacidade de atendimento no prestador substituto. A Singular deverá comunicar a exclusão aos beneficiários na data em que tomou conhecimento da suspensão do atendimento do prestador a ser <b>excluído</b> e providenciar sua substituição e comunicação aos beneficiários no prazo de sessenta dias, contados da data que tomou conhecimento do fato da suspensão.",answers:{}},
+{code:"12.2.1.",text:"A Singular é aderente ao serviço CEMPRE de rede direta?",answers:{"Sim":"R.12.2.1_1.","Não":"R.12.2.1_2."},additionalText:["<b>Informações complementares:</b>","CEMPRE - Central Estadual de Manutenção de Rede de Prestadores. Serviço prestado às Singulares do Estado do Paraná pela Assessoria Regulamentar da Federação. Clique <a href=' https://www.unimed.coop.br/site/web/assessoriaregulamentarpr-parana/cempre' target='_blank' >aqui</a> para acessar a página do serviço."]},
+{code:"R.12.2.1_1.",text:"É permitida a substituição, sendo que a Singular deverá comunicar a exclusão aos beneficiários na data em que tomou conhecimento da suspensão do atendimento do prestador a ser excluído e providenciar sua substituição e comunicação aos beneficiários no prazo de sessenta dias, contados da data que tomou conhecimento do fato da suspensão. A Singular deverá solicitar a exclusão via SIR RPS.<br> Clique no botão abaixo para acesso rápido à plataforma.",answers:{"SIR RPS":{"url":"https://sir.adm.br/cempre/"}},additionalText:["<b>Informações complementares:</b>","Caso precise de auxílio para o preenchimento do formulário eletrônico no SIR-RPS, leia o passo a passo no <a href='manual_sir.pdf' target='_blank' >Manual do Usuário. </a>"]},
+{code:"R.12.2.1_2.",text:"É permitida a substituição, sendo que a Singular deverá comunicar a exclusão aos beneficiários na data em que tomou conhecimento da suspensão do atendimento do prestador a ser excluído e providenciar sua substituição e comunicação aos beneficiários no prazo de sessenta dias, contados da data que tomou conhecimento do fato da suspensão. A Singular deverá solicitar a exclusão por meio do envio de arquivo XML de exclusão (extensão RPE) para ANS.<br> <br>Para mais informações, entre em contato com a Assessoria Regulamentar: <a href='mailto:cempre@unimedpr.coop.br'>cempre@unimedpr.coop.br</a>.",answers:{}},
+
+
+
+
+
+
+
+
+
+
+      ];
+
+      let currentQuestionIndex = 0;
+      const questionHistory = [];
+
+      function loadQuestion(index) {
+        const questionElement = document.getElementById('question');
+        const buttonsContainer = document.getElementById('buttonsContainer');
+	const additionalTextElement = document.getElementById('additionalText');
+	const scriptContainer = document.getElementById('scriptContainer');
+	const codeElement = document.getElementById('codeShow');	
+
+        questionElement.innerHTML = questions[index].text;
+	//codeElement.innerHTML = `Código: ${questions[index].code}`;
+
+
+        // Clear previous buttons
+        buttonsContainer.innerHTML = '';
+        additionalTextElement.innerHTML = '';
+        scriptContainer.innerHTML = '';
+
+
+        // Create new buttons based on answers
+        const answers = questions[index].answers;
+        for (const answer in answers) {
+          const button = document.createElement('button');
+          button.textContent = answer;
+          button.addEventListener('click', function() {
+            if (typeof answers[answer] === 'object' && answers[answer].url) {
+              window.open(answers[answer].url);
+            } else {
+              handleAnswer(answer, answers[answer]);
+            }
+          });
+          buttonsContainer.appendChild(button);
+        }
+
+ 	 // Display additional text if available
+    additionalTextElement.innerHTML = '';
+    if (questions[index].additionalText) {
+        additionalTextElement.innerHTML = questions[index].additionalText.map(line => `<p>${line}</p>`).join('<br>');
+        additionalTextElement.style.display = 'block';
+
+        // Add click event for any links in the additional text
+        additionalTextElement.querySelectorAll('a[data-question-code]').forEach(link => {
+            link.addEventListener('click', function (event) {
+                event.preventDefault();
+                const questionCode = this.getAttribute('data-question-code');
+                const nextIndex = questions.findIndex(question => question.code === questionCode);
+                if (nextIndex !== -1) {
+                    currentQuestionIndex = nextIndex;
+                    loadQuestion(currentQuestionIndex);
+                }
+            });
+        });
+    } else {
+        additionalTextElement.style.display = 'none';
+    }
+
+
+	// Load and execute script if available
+        if (questions[index].script) {
+          const script = document.createElement('script');
+          script.src = questions[index].script;
+          script.onload = function() {
+            if (typeof loadScriptContent === 'function') {
+              loadScriptContent(scriptContainer);
+            }
+          };
+          document.body.appendChild(script);
+        }
+
+
+
+      }
+
+	
+	function loadSpecificQuestion(questionCode) {
+	console.log('loadSpecificQuestion called with:', questionCode);
+        const questionIndex = questions.findIndex(question => question.code === questionCode);
+        if (questionIndex !== -1) {
+            currentQuestionIndex = questionIndex;
+            loadQuestion(currentQuestionIndex);
+        } else {
+            console.log("Question not found.");
+        }
+    }
+
+     function handleAnswer(answer, nextQuestionCode) {
+        questionHistory.push(currentQuestionIndex);
+        // Find the next question index based on the code
+        const nextIndex = questions.findIndex(question => question.code === nextQuestionCode);
+        if (nextIndex !== -1) {
+          currentQuestionIndex = nextIndex;
+          loadQuestion(currentQuestionIndex);
+        } else {
+          // Handle if next question not found (e.g., show end of questionnaire message)
+          console.log("End of questionnaire or next question not found.");
+        }
+      }
+
+      function handleBack() {
+        if (questionHistory.length > 0) {
+          currentQuestionIndex = questionHistory.pop();
+          loadQuestion(currentQuestionIndex);
+        }
+      }
+
+       document.getElementById('backButton').addEventListener('click', function() {
+    if (questions[currentQuestionIndex].code === "1.") {
+        // Redirect to a different page
+        window.location.href = 'nao_hospitalar.html';
+    } else if (questionHistory.length > 0) {
+        currentQuestionIndex = questionHistory.pop();
+        loadQuestion(currentQuestionIndex);
+    }
+});
+
+      // Load the initial question
+      loadQuestion(currentQuestionIndex);
+    });
+	</script>
+</head>
+<body>
+    <!-- Banner image -->
+    <img src="banner-simulerede.jpg" alt="Banner Image" class="banner">
+
+<!-- Separador -->
+    <img src="icone-separador.png" alt="separador" class="separador">
+
+<!-- Menu -->
+<nav class="menu" id="nav">
+
+	<span class="nav-item">
+		<a href="https://www.unimed.coop.br/site/web/assessoriaregulamentarpr-parana/home" target="_blank">Assessoria Regulamentar</a>
+	</span>
+
+	<span class="nav-item">
+		<a href="simularede.html">SimulaRede</a>
+	</span>
+
+	<span class="nav-item">
+		<a href="limitrofes.html">Municípios limítrofes</a>
+	</span>
+
+	<span class="nav-item">
+		<a href="regiao.html">Região de Saúde</a>
+	</span>
+
+	<span class="nav-item">
+		<a href="calculadora585.html">Calculadora RN 585</a>
+	</span>
+</nav>
+
+<!-- Separador -->
+    <img src="icone-separador.png" alt="separador" class="separador">
+
+<!-- Text -->
+    <div class="text-content">
+	<p style="font-size: 35px; font-weight: bold;">SimulaRede <span style="font-size: 25px; font-weight: bold;">&gt; Prestador não hospitalar &gt; Exclusão</span></p>
+	<br>
+	<br>
+	<p id="question">Question 1</p>
+	<br> 
+  	<div id="buttonsContainer"></div>
+	<br> 
+	<button id="backButton">Voltar</button>
+	<br></br>
+	<div id="additionalText" style="display: none;"></div>
+	<div id="scriptContainer"></div>
+  	<br></br>
+    </div>
+
+
+<!-- Separador -->
+    <img src="icone-separador.png" alt="separador" class="separador">
+<br>
+<footer class="main-footer">
+      <div class="pull-right hidden-xs">
+      <b>Versão</b> 1.0.0
+    </div>
+</footer>
+<script>
+window.addEventListener('load', function() {
+        // Seleciona o elemento que você quer que a página role até ele
+        var element = document.querySelector('.text-content');
+        
+        // Verifica se o elemento existe na página
+        if (element) {
+            // Rola para o elemento
+            element.scrollIntoView({ behavior: 'smooth' });
+        }
+    });
+</script>
+</body>
+</html>
