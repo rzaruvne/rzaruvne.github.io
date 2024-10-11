@@ -68,7 +68,7 @@
             <input type="number" id="numHospitals" name="numHospitals" min="1" placeholder="Quantidade de hospitais">
             <br><br>
             <div id="hospitalInputs">
-                <!-- Hospital name and hospitalization inputs will be added here -->
+                <!-- Hospital name, hospitalization inputs and date inputs will be put here -->
             </div>
             <br>
             <input type="submit" value="Calcular" onclick="calculateAndDisplayMessage()">
@@ -100,7 +100,7 @@
 <br>
 <b>Entenda a regra de cálculo: </b>
 <br>
-<br>1º Os hospitais são ordenados em ordem decrescente de número de internações e  nos casos de empate, os prestadores envolvidos serão ordenados por data de internação mais recente, ou seja, aquele cuja última data da internação tenha sido mais próxima à data da solicitação da alteração da rede hospitalar será classificado primeiro.
+<br>1º Os hospitais são ordenados em ordem decrescente de número de internações e  nos casos de empate, os prestadores envolvidos são ordenados por data de internação mais recente, ou seja, aquele cuja última data da internação tenha sido mais próxima à data da solicitação da alteração da rede hospitalar será classificado primeiro.
 <br>
 <br>2º Caso o hospital a ser excluído faça parte do conjunto de prestadores responsáveis por até 80% do percentual acumulado de internações na sua região de saúde e possua, individualmente, mais de 5% destas internações, tal hospital <b>não</b> poderá ser redimensionado considerando que sua exclusão resultará em impacto na massa assistida.
 </div>
@@ -326,7 +326,8 @@ document.getElementById('hospitalForm').addEventListener('submit', function(even
                 flatpickr(dateInput, {
                     dateFormat: "d/m/Y", // Example date format
                     allowInput: false, // Allow input while still showing the date picker
-			locale: "pt"
+			locale: "pt",
+			disableMobile: "true"
                 });
 
         hospitalInputsContainer.appendChild(hospitalContainer);
