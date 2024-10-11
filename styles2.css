@@ -18,7 +18,7 @@ body, h1, p {
 }
 
 .date-input::placeholder {
-    color: #888; /* Light gray for placeholder text */
+    color: grey; /* Light gray for placeholder text */
     opacity: 1; /* Make sure the opacity is visible */
 }
 
@@ -183,6 +183,7 @@ table {
             padding: 10px;
             width: 300px;
    	    height: 30px;
+		    border: 1px solid #808080; /* Border style */
         }
 
     #questionContainer {
@@ -279,7 +280,7 @@ table {
 
 /* CSS to handle the placeholder style */
 .placeholder {
-    color: #888; /* Adjust the color to look like a placeholder */
+    color: grey; /* Adjust the color to look like a placeholder */
 }
 
 /* Responsive design for mobile devices */
