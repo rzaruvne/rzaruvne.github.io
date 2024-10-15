@@ -160,7 +160,8 @@ document.getElementById('hospitalForm').addEventListener('submit', function(even
         const hospitalizationsInput = document.getElementById(`hospitalizations${i}`);
         const hospitalizations = parseInt(hospitalizationsInput.value);
         const dateInput = document.getElementById(`date${i}`);
-        const date = dateInput.value;
+        const date = flatpickr.parseDate(dateInput.value, "d/m/Y"); // Parse the date
+
 
         // Reset border colors before validation
         hospitalizationsInput.style.borderColor = '';
@@ -317,7 +318,7 @@ document.getElementById('hospitalForm').addEventListener('submit', function(even
                 dateInput.id = `date${i}`;
                 dateInput.name = `date${i}`;
                 dateInput.className = 'date-input';
-                dateInput.placeholder = 'Data da internação mais recente'; // Set placeholder
+                dateInput.placeholder = `Data da internação mais recente hospital ${i}`; // Set placeholder with hospital number
 
                 // Append the date input to the hospital container
                 hospitalContainer.appendChild(dateInput);
